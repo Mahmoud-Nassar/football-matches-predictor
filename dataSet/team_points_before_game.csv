@@ -1,0 +1,381 @@
+HomeTeam,AwayTeam,Team1 Total Points,Team2 Total Points,Team1 Home Points,Team1 Away Points,Team2 Home Points,Team2 Away Points
+Leganes,Alaves,3,0,3,0,0,0
+Valencia,Las Palmas,3,0,3,0,0,0
+Celta,Sociedad,0,3,0,0,0,3
+Girona,Ath Madrid,2,2,1,1,1,1
+Sevilla,Espanol,2,2,1,1,1,1
+Ath Bilbao,Getafe,2,2,1,1,1,1
+Barcelona,Betis,3,0,3,0,0,0
+La Coruna,Real Madrid,0,3,0,0,0,3
+Levante,Villarreal,3,0,3,0,0,0
+Malaga,Eibar,0,3,0,0,0,3
+Betis,Celta,3,0,3,0,0,0
+Sociedad,Villarreal,6,0,3,3,0,0
+Alaves,Barcelona,0,6,0,0,3,3
+Girona,Malaga,5,0,4,1,0,0
+Las Palmas,Ath Madrid,0,5,0,0,1,4
+Levante,La Coruna,5,2,4,1,1,1
+Eibar,Ath Bilbao,3,5,0,3,1,4
+Espanol,Leganes,2,6,1,1,3,3
+Getafe,Sevilla,2,5,1,1,1,4
+Real Madrid,Valencia,5,5,1,4,4,1
+Leganes,Getafe,6,5,3,3,1,4
+Barcelona,Espanol,9,2,6,3,1,1
+Real Madrid,Levante,7,7,2,5,5,2
+Sevilla,Eibar,8,3,4,4,0,3
+Valencia,Ath Madrid,7,7,5,2,2,5
+Ath Bilbao,Girona,8,5,4,4,4,1
+Celta,Alaves,3,0,3,0,0,0
+La Coruna,Sociedad,2,9,1,1,3,6
+Villarreal,Betis,3,3,3,0,3,0
+Malaga,Las Palmas,0,3,0,0,0,3
+Eibar,Leganes,6,6,3,3,3,3
+Ath Madrid,Malaga,10,0,5,5,0,0
+Betis,La Coruna,6,2,6,0,1,1
+Getafe,Barcelona,5,12,1,4,6,6
+Levante,Valencia,9,9,6,3,6,3
+Alaves,Villarreal,0,6,0,0,3,3
+Girona,Sevilla,5,11,4,1,4,7
+Las Palmas,Ath Bilbao,6,8,3,3,4,4
+Sociedad,Real Madrid,9,10,3,6,2,8
+Espanol,Celta,5,3,4,1,3,0
+Barcelona,Eibar,15,6,9,6,3,3
+Valencia,Malaga,12,0,9,3,0,0
+Ath Bilbao,Ath Madrid,8,13,4,4,5,8
+La Coruna,Alaves,5,0,4,1,0,0
+Leganes,Girona,8,7,4,4,5,2
+Real Madrid,Betis,10,9,2,8,6,3
+Sevilla,Las Palmas,14,6,7,7,3,3
+Celta,Getafe,5,7,4,1,2,5
+Levante,Sociedad,12,9,9,3,3,6
+Villarreal,Espanol,8,7,4,4,5,2
+Alaves,Real Madrid,0,13,0,0,2,11
+Ath Madrid,Sevilla,16,14,8,8,7,7
+Girona,Barcelona,7,18,5,2,9,9
+Malaga,Ath Bilbao,2,10,1,1,5,5
+Eibar,Celta,6,8,3,3,4,4
+Espanol,La Coruna,10,5,8,2,4,1
+Getafe,Villarreal,10,8,5,5,4,4
+Las Palmas,Leganes,6,11,3,3,4,7
+Sociedad,Valencia,9,15,3,6,9,6
+Betis,Levante,12,12,9,3,9,3
+Celta,Girona,10,9,5,5,6,3
+La Coruna,Getafe,8,10,7,1,5,5
+Leganes,Ath Madrid,13,18,5,8,9,9
+Levante,Alaves,12,3,9,3,0,3
+Sevilla,Malaga,17,2,10,7,1,1
+Barcelona,Las Palmas,21,6,12,9,3,3
+Real Madrid,Espanol,16,10,5,11,8,2
+Sociedad,Betis,11,14,4,7,10,4
+Valencia,Ath Bilbao,18,10,12,6,5,5
+Villarreal,Eibar,11,6,7,4,3,3
+Espanol,Levante,12,14,9,3,10,4
+Alaves,Sociedad,3,14,0,3,4,10
+Ath Bilbao,Sevilla,13,17,8,5,10,7
+Ath Madrid,Barcelona,20,23,10,10,13,10
+Getafe,Real Madrid,10,19,5,5,5,14
+Betis,Valencia,14,21,10,4,12,9
+Eibar,La Coruna,8,10,4,4,8,2
+Girona,Villarreal,9,14,6,3,7,7
+Malaga,Leganes,2,16,1,1,5,11
+Las Palmas,Celta,6,13,3,3,5,8
+Barcelona,Malaga,26,2,16,10,1,1
+Betis,Alaves,17,3,13,4,0,3
+Levante,Getafe,16,12,11,5,6,6
+Valencia,Sevilla,24,17,15,9,10,7
+Celta,Ath Madrid,13,23,5,8,10,13
+Leganes,Ath Bilbao,19,13,8,11,8,5
+Real Madrid,Eibar,22,8,8,14,4,4
+Villarreal,Las Palmas,17,6,10,7,3,3
+La Coruna,Girona,10,12,8,2,6,6
+Sociedad,Espanol,16,14,5,11,10,4
+Alaves,Valencia,3,27,0,3,15,12
+Ath Bilbao,Barcelona,13,29,8,5,16,13
+Ath Madrid,Villarreal,25,19,11,14,11,8
+Sevilla,Leganes,20,19,13,7,8,11
+Eibar,Levante,10,18,5,5,12,6
+Getafe,Sociedad,15,16,9,6,5,11
+Girona,Real Madrid,15,22,9,6,8,14
+Malaga,Celta,5,13,4,1,5,8
+Espanol,Betis,17,17,13,4,13,4
+Las Palmas,La Coruna,6,13,3,3,8,5
+Betis,Getafe,19,17,14,5,10,7
+Alaves,Espanol,6,17,3,3,13,4
+Barcelona,Sevilla,32,20,19,13,13,7
+La Coruna,Ath Madrid,13,28,8,5,11,17
+Valencia,Leganes,30,19,18,12,8,11
+Celta,Ath Bilbao,16,13,8,8,8,5
+Levante,Girona,18,18,12,6,9,9
+Real Madrid,Las Palmas,25,6,11,14,3,3
+Sociedad,Eibar,19,10,8,11,5,5
+Villarreal,Malaga,22,5,14,8,4,1
+Girona,Sociedad,20,21,10,10,9,12
+Ath Madrid,Real Madrid,30,27,12,18,12,15
+Getafe,Alaves,20,6,13,7,3,3
+Leganes,Barcelona,19,35,8,11,19,16
+Sevilla,Celta,23,16,16,7,8,8
+Ath Bilbao,Villarreal,15,24,9,6,15,9
+Espanol,Valencia,17,33,13,4,18,15
+Las Palmas,Levante,6,21,3,3,12,9
+Malaga,La Coruna,8,13,7,1,8,5
+Eibar,Betis,13,19,8,5,14,5
+Celta,Leganes,19,19,11,8,8,11
+Alaves,Eibar,6,16,3,3,8,8
+Betis,Girona,21,22,15,6,11,11
+Levante,Ath Madrid,21,33,12,9,12,21
+Real Madrid,Malaga,30,8,15,15,7,1
+La Coruna,Ath Bilbao,15,17,9,6,10,7
+Sociedad,Las Palmas,23,8,10,13,4,4
+Valencia,Barcelona,35,37,19,16,20,17
+Villarreal,Sevilla,24,26,15,9,16,10
+Espanol,Getafe,20,20,16,4,13,7
+Malaga,Levante,10,23,8,2,13,10
+Ath Bilbao,Real Madrid,19,32,11,8,16,16
+Ath Madrid,Sociedad,36,23,15,21,10,13
+Barcelona,Celta,39,21,21,18,12,9
+Sevilla,La Coruna,29,15,19,10,9,6
+Eibar,Espanol,19,20,11,8,16,4
+Getafe,Valencia,23,35,16,7,19,16
+Las Palmas,Betis,11,21,7,4,15,6
+Leganes,Villarreal,22,24,11,11,15,9
+Girona,Alaves,22,9,11,11,3,6
+Alaves,Las Palmas,12,11,6,6,7,4
+Getafe,Eibar,25,21,17,8,12,9
+La Coruna,Leganes,18,22,12,6,11,11
+Real Madrid,Sevilla,35,29,19,16,19,10
+Valencia,Celta,38,21,22,16,12,9
+Betis,Ath Madrid,21,39,15,6,15,24
+Levante,Ath Bilbao,23,22,13,10,11,11
+Sociedad,Malaga,23,13,10,13,8,5
+Villarreal,Barcelona,24,42,15,9,21,21
+Espanol,Girona,20,25,16,4,11,14
+Sevilla,Levante,31,25,20,11,14,11
+Ath Bilbao,Sociedad,24,25,12,12,11,14
+Ath Madrid,Alaves,42,12,18,24,6,6
+Eibar,Valencia,24,38,15,9,22,16
+Barcelona,La Coruna,45,18,24,21,12,6
+Celta,Villarreal,21,27,12,9,15,12
+Girona,Getafe,28,25,14,14,17,8
+Las Palmas,Espanol,13,22,8,5,17,5
+Malaga,Betis,13,24,8,5,15,9
+Levante,Leganes,27,24,15,12,12,12
+Getafe,Las Palmas,28,13,20,8,8,5
+Sociedad,Sevilla,28,31,14,14,20,11
+Alaves,Malaga,15,13,9,6,8,5
+Eibar,Girona,27,28,18,9,14,14
+Betis,Ath Bilbao,24,27,15,9,12,15
+Espanol,Ath Madrid,25,42,20,5,18,24
+La Coruna,Celta,18,24,12,6,12,12
+Real Madrid,Barcelona,35,48,19,16,24,24
+Valencia,Villarreal,38,30,22,16,15,15
+Ath Madrid,Getafe,45,28,21,24,20,8
+Las Palmas,Eibar,13,30,8,5,18,12
+Sevilla,Betis,31,27,20,11,15,12
+Valencia,Girona,41,28,25,16,14,14
+Ath Bilbao,Alaves,30,15,15,15,9,6
+Barcelona,Levante,51,27,27,24,15,12
+Celta,Real Madrid,26,37,13,13,20,17
+Leganes,Sociedad,27,28,15,12,14,14
+Villarreal,La Coruna,32,20,16,16,13,7
+Malaga,Espanol,13,28,8,5,20,8
+Getafe,Malaga,31,13,23,8,8,5
+Eibar,Ath Madrid,30,48,18,12,21,27
+Girona,Las Palmas,31,13,17,14,8,5
+La Coruna,Valencia,20,44,13,7,25,19
+Real Madrid,Villarreal,37,35,20,17,16,19
+Alaves,Sevilla,18,31,12,6,20,11
+Espanol,Ath Bilbao,30,32,21,9,16,16
+Levante,Celta,27,29,15,12,13,16
+Sociedad,Barcelona,28,54,14,14,27,27
+Betis,Leganes,30,27,18,12,15,12
+Getafe,Ath Bilbao,33,34,24,9,17,17
+Ath Madrid,Girona,50,33,22,28,18,15
+Espanol,Sevilla,30,34,21,9,20,14
+Las Palmas,Valencia,16,44,11,5,25,19
+Villarreal,Levante,38,27,19,19,15,12
+Alaves,Leganes,20,29,13,7,16,13
+Betis,Barcelona,30,57,18,12,27,30
+Real Madrid,La Coruna,40,20,23,17,13,7
+Sociedad,Celta,28,32,14,14,13,19
+Eibar,Malaga,32,15,19,13,9,6
+Ath Bilbao,Eibar,36,34,18,18,20,14
+La Coruna,Levante,22,29,14,8,16,13
+Malaga,Girona,17,35,10,7,19,16
+Valencia,Real Madrid,44,43,25,19,23,20
+Villarreal,Sociedad,41,28,22,19,14,14
+Ath Madrid,Las Palmas,53,16,25,28,11,5
+Barcelona,Alaves,60,20,30,30,13,7
+Leganes,Espanol,32,30,19,13,21,9
+Sevilla,Getafe,36,35,21,15,25,10
+Celta,Betis,35,30,16,19,18,12
+Sociedad,La Coruna,31,22,17,14,14,8
+Alaves,Celta,23,35,16,7,16,19
+Betis,Villarreal,33,41,21,12,22,19
+Eibar,Sevilla,37,36,23,14,21,15
+Levante,Real Madrid,31,45,17,14,24,21
+Ath Madrid,Valencia,56,44,28,28,25,19
+Espanol,Barcelona,32,62,22,10,31,31
+Getafe,Leganes,37,34,26,11,20,14
+Girona,Ath Bilbao,38,36,22,16,18,18
+Las Palmas,Malaga,19,17,14,5,10,7
+Ath Bilbao,Las Palmas,38,21,19,19,15,6
+Leganes,Eibar,34,40,20,14,23,17
+Malaga,Ath Madrid,17,59,10,7,28,31
+Real Madrid,Sociedad,48,31,27,21,17,14
+Villarreal,Alaves,41,26,22,19,16,10
+Barcelona,Getafe,64,39,32,32,27,12
+Celta,Espanol,37,34,17,20,23,11
+Sevilla,Girona,39,38,24,15,22,16
+Valencia,Levante,47,31,28,19,17,14
+La Coruna,Betis,22,36,14,8,21,15
+Girona,Leganes,41,34,25,16,20,14
+Alaves,La Coruna,29,22,19,10,14,8
+Eibar,Barcelona,40,67,23,17,32,35
+Las Palmas,Sevilla,21,42,15,6,24,18
+Malaga,Valencia,17,50,10,7,28,22
+Ath Madrid,Ath Bilbao,62,38,31,31,19,19
+Betis,Real Madrid,36,51,21,15,27,24
+Espanol,Villarreal,36,43,24,12,23,20
+Sociedad,Levante,34,31,20,14,17,14
+Getafe,Celta,42,37,30,12,17,20
+Leganes,Real Madrid,34,54,20,14,27,27
+La Coruna,Espanol,24,38,15,9,25,13
+Barcelona,Girona,70,41,35,35,25,16
+Celta,Eibar,40,40,20,20,23,17
+Leganes,Las Palmas,36,23,21,15,16,7
+Real Madrid,Alaves,57,29,30,27,19,10
+Ath Bilbao,Malaga,41,17,22,19,10,7
+Sevilla,Ath Madrid,42,65,24,18,31,34
+Valencia,Sociedad,53,34,31,22,20,14
+Villarreal,Getafe,46,42,26,20,30,12
+Levante,Betis,31,39,17,14,21,18
+Espanol,Real Madrid,41,57,28,13,30,27
+Girona,Celta,44,40,28,16,20,20
+Ath Bilbao,Valencia,43,55,23,20,32,23
+Ath Madrid,Leganes,68,36,34,34,21,15
+Eibar,Villarreal,43,46,26,17,26,20
+Getafe,La Coruna,45,24,33,12,15,9
+Malaga,Sevilla,17,45,10,7,24,21
+Alaves,Levante,32,31,22,10,17,14
+Betis,Sociedad,41,36,22,19,21,15
+Las Palmas,Barcelona,25,72,17,8,36,36
+La Coruna,Eibar,26,45,16,10,27,18
+Leganes,Malaga,39,17,24,15,10,7
+Real Madrid,Getafe,60,45,33,27,33,12
+Sevilla,Ath Bilbao,48,43,27,21,23,20
+Villarreal,Girona,46,47,26,20,28,19
+Barcelona,Ath Madrid,75,68,39,36,34,34
+Levante,Espanol,33,43,18,15,29,14
+Sociedad,Alaves,39,32,24,15,22,10
+Valencia,Betis,58,41,35,23,22,19
+Celta,Las Palmas,43,25,23,20,17,8
+Girona,La Coruna,50,26,31,19,16,10
+Eibar,Real Madrid,45,63,27,18,33,30
+Getafe,Levante,45,36,33,12,18,18
+Malaga,Barcelona,17,78,10,7,39,39
+Sevilla,Valencia,48,61,27,21,35,26
+Ath Bilbao,Leganes,46,39,26,20,24,15
+Ath Madrid,Celta,71,43,37,34,23,20
+Espanol,Sociedad,46,39,32,14,24,15
+Las Palmas,Villarreal,25,49,17,8,26,23
+Alaves,Betis,32,44,22,10,22,22
+Levante,Eibar,39,45,21,18,27,18
+Betis,Espanol,47,46,25,22,32,14
+La Coruna,Las Palmas,28,27,17,11,18,9
+Sociedad,Getafe,39,48,24,15,33,15
+Valencia,Alaves,64,32,38,26,22,10
+Barcelona,Ath Bilbao,81,46,42,39,26,20
+Celta,Malaga,45,19,24,21,11,8
+Leganes,Sevilla,42,48,27,15,27,21
+Real Madrid,Girona,66,50,36,30,31,19
+Villarreal,Ath Madrid,52,71,29,23,37,34
+Ath Bilbao,Celta,48,47,27,21,25,22
+Girona,Levante,52,41,32,20,22,19
+Las Palmas,Real Madrid,27,69,18,9,36,33
+Sevilla,Barcelona,50,83,28,22,43,40
+Ath Madrid,La Coruna,74,28,40,34,17,11
+Eibar,Sociedad,47,41,28,19,25,16
+Espanol,Alaves,48,34,33,15,23,11
+Leganes,Valencia,42,67,27,15,38,29
+Malaga,Villarreal,22,52,14,8,29,23
+Getafe,Betis,48,50,33,15,25,25
+La Coruna,Malaga,31,22,20,11,14,8
+Alaves,Getafe,37,48,26,11,33,15
+Barcelona,Leganes,86,42,46,40,27,15
+Betis,Eibar,53,47,28,25,28,19
+Celta,Sevilla,50,50,28,22,28,22
+Levante,Las Palmas,44,27,25,19,18,9
+Real Madrid,Ath Madrid,71,76,37,34,41,35
+Sociedad,Girona,44,52,28,16,32,20
+Valencia,Espanol,70,48,41,29,33,15
+Villarreal,Ath Bilbao,52,51,29,23,27,24
+Girona,Betis,52,56,32,20,28,28
+Ath Bilbao,La Coruna,51,34,27,24,20,14
+Barcelona,Valencia,89,70,49,40,41,29
+Las Palmas,Sociedad,27,47,18,9,28,19
+Leganes,Celta,45,50,30,15,28,22
+Sevilla,Villarreal,52,54,29,23,30,24
+Ath Madrid,Levante,79,44,44,35,25,19
+Eibar,Alaves,47,40,28,19,26,14
+Getafe,Espanol,51,48,36,15,33,15
+Malaga,Real Madrid,22,74,14,8,37,37
+Celta,Barcelona,52,91,29,23,50,41
+La Coruna,Sevilla,36,54,21,15,30,24
+Villarreal,Leganes,57,45,33,24,30,15
+Espanol,Eibar,48,50,33,15,28,22
+Real Madrid,Ath Bilbao,76,53,38,38,28,25
+Valencia,Getafe,70,54,41,29,36,18
+Alaves,Girona,40,55,26,14,32,23
+Betis,Las Palmas,59,27,31,28,18,9
+Levante,Malaga,47,22,28,19,14,8
+Sociedad,Ath Madrid,50,79,31,19,44,35
+Leganes,La Coruna,47,38,31,16,22,16
+Celta,Valencia,54,72,30,24,42,30
+Eibar,Getafe,50,57,28,22,36,21
+Ath Madrid,Betis,81,61,45,36,32,29
+Girona,Espanol,55,51,32,23,33,18
+Las Palmas,Alaves,27,43,18,9,26,17
+Malaga,Sociedad,25,50,17,8,31,19
+Ath Bilbao,Levante,53,50,28,25,28,22
+Levante,Sevilla,53,54,31,22,30,24
+Espanol,Las Palmas,53,29,34,19,19,10
+Real Madrid,Leganes,79,47,41,38,31,16
+Sociedad,Ath Bilbao,53,53,34,19,28,25
+Villarreal,Celta,60,54,36,24,30,24
+Alaves,Ath Madrid,43,84,26,17,45,39
+Getafe,Girona,59,57,37,22,33,24
+La Coruna,Barcelona,38,94,22,16,50,44
+Valencia,Eibar,74,52,43,31,29,23
+Betis,Malaga,64,25,35,29,17,8
+Sevilla,Sociedad,57,53,33,24,34,19
+Ath Bilbao,Betis,56,64,31,25,35,29
+Celta,La Coruna,56,40,31,25,23,17
+Girona,Eibar,57,55,33,24,29,26
+Villarreal,Valencia,63,74,39,24,43,31
+Ath Madrid,Espanol,84,56,45,39,34,22
+Barcelona,Real Madrid,96,81,51,45,42,39
+Las Palmas,Getafe,29,62,19,10,37,25
+Malaga,Alaves,25,46,17,8,26,20
+Leganes,Levante,47,56,31,16,31,25
+Barcelona,Villarreal,99,63,54,45,39,24
+Sevilla,Real Madrid,60,81,36,24,42,39
+Alaves,Ath Bilbao,49,56,29,20,31,25
+Betis,Sevilla,66,62,36,30,37,25
+Eibar,Las Palmas,58,29,32,26,19,10
+Getafe,Ath Madrid,62,87,37,25,45,42
+Girona,Valencia,57,77,33,24,43,34
+La Coruna,Villarreal,40,66,23,17,39,27
+Real Madrid,Celta,84,56,45,39,31,25
+Sociedad,Leganes,56,47,37,19,31,16
+Espanol,Malaga,59,25,37,22,17,8
+Levante,Barcelona,59,99,34,25,54,45
+Celta,Levante,59,59,34,25,34,25
+Las Palmas,Girona,29,60,19,10,33,27
+Leganes,Betis,50,66,34,16,36,30
+Malaga,Getafe,25,65,17,8,37,28
+Sevilla,Alaves,65,49,40,25,29,20
+Villarreal,Real Madrid,68,86,40,28,46,40
+Ath Bilbao,Espanol,56,62,31,25,37,25
+Ath Madrid,Eibar,89,60,46,43,33,27
+Barcelona,Sociedad,102,56,57,45,37,19
+Valencia,La Coruna,80,40,46,34,23,17
