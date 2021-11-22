@@ -10,16 +10,17 @@ Teams = ['Valencia', 'Celta', 'Villarreal', 'Espanol', 'Malaga', 'Barcelona', 'S
 def tup_add(t1, t2):
     x = t1[0] + t2[0]
     y = t1[1] + t2[1]
-    return x, y
+    return [x, y]
 
 
-def calc_points(score):
+def calc_points(score, home, away):
     if score[4] > score[5]:
-        return [[3, 0], [0, 0]]
+        home[0] += 3
     elif score[5] == score[4]:
-        return [[1, 1], [1, 1]]
+        home[0] += 1
+        away[1] += 1
     else:
-        return [[0, 0], [0, 3]]
+        away[1] += 3
 
 
 if __name__ == '__main__':
@@ -40,9 +41,7 @@ if __name__ == '__main__':
         for game in games_attr:
             home_idx = Teams.index(game[2])
             away_idx = Teams.index(game[3])
-            game_points = calc_points(game)
-            points[home_idx] = tup_add(points[home_idx], game_points[0])
-            points[away_idx] = tup_add(points[away_idx], game_points[1])
+            calc_points(game, points[home_idx], points[away_idx])
             # print(points)
             writer.writerow({'HomeTeam': game[2], 'AwayTeam': game[3], 'Team1 Home Points': points[home_idx][0],
                              'Team1 Total Points': points[home_idx][0]+points[home_idx][1],

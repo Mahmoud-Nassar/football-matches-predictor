@@ -22,8 +22,8 @@ def team_file_generator():
     for team in Teams:
         team_file = open(r'C:\Users\Asus\PycharmProjects\AI_Project\dataSet\players_'+team+'.csv', 'w', newline='',
                          encoding="utf-8")
-        t_players_indx = [idx for idx, x in enumerate(players_att) if x[4] == team]
-        players = [players_att[p] for p in t_players_indx]
+        t_players_idx = [idx for idx, x in enumerate(players_att) if x[4] == team]
+        players = [players_att[p] for p in t_players_idx]
         team = pd.DataFrame(players)
         team.to_csv(team_file, header=Header)
         team_file.close()
