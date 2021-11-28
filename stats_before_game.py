@@ -6,6 +6,7 @@ Teams = ['Valencia', 'Celta', 'Villarreal', 'Espanol', 'Malaga', 'Barcelona', 'S
          'Alaves', 'Leganes', 'Las Palmas', 'Ath Madrid', 'Ath Bilbao', 'La Coruna', 'Levante', 'Betis', 'Eibar',
          'Real Madrid']
 
+
 def tup_add(t1, t2):
     x = t1[0] + t2[0]
     y = t1[1] + t2[1]
