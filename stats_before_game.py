@@ -42,7 +42,7 @@ if __name__ == '__main__':
     for idx in range(20):
         points.append([0, 0])
         goals_scored.append([0, 0])
-        goals_conceded.append([0,0])
+        goals_conceded.append([0, 0])
 
     header = ['HomeTeam', 'AwayTeam', 'Team1 Total Points', 'Team2 Total Points',
               'Team1 Home Points', 'Team1 Away Points',
