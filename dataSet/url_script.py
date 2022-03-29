@@ -94,9 +94,13 @@ def fetch_game_lineup(url, year):
     soup = get_soup(url)
 
     # tables = soup.find_all("table")[:1]
-    tables = soup.find_all('article')[5].select('.col-xs-12.col-sm-6')
+    articles = soup.find_all('article')
+    if len(articles) < 5:
+        return
+    tables = articles[5].select('.col-xs-12.col-sm-6')
     print(f"[+] Found a total of {len(tables)} tables.")
-
+    if len(tables) == 0:
+        return
     team1_name = tables[0].select_one('.color-fondo').text
     team2_name = tables[1].select_one('.color-fondo').text
 
@@ -229,9 +233,10 @@ def create_list_of_urls(url, base_url):
 if __name__ == '__main__':
     # league_all_match_days(2020)
     urls_list =league_all_match_days('2020_2021', "https://m.football-lineups.com/")
-    print(urls_list[0])
-    time.sleep(3)
-    for url in urls_list:
-        fetch_game_lineup(url, '2020_2021')
-        time.sleep(3)
+    print(len(urls_list))
+    # time.sleep(3)
+    # for url in urls_list[330:]:
+    #     print(url)
+    #     fetch_game_lineup(url, '2020_2021')
+    #     time.sleep(3)
 
