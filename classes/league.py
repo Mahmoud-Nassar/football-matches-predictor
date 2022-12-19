@@ -18,7 +18,7 @@ class League:
         self.teams.append(Team())
         for team in teams:
             self.teams.append(Team(team[0], team[1], team[2],
-                                   team[3], team[4], processMarketValue(team[5]), team[7]))
+                                   team[3], team[4], processMarketValue(team[5]), team[7], team[8]))
 
     def startLeague(self, csvGamesPath):
         games = np.genfromtxt(csvGamesPath, delimiter=',', names=True, dtype=None, encoding=None)
@@ -26,28 +26,80 @@ class League:
         csvFile = [[]]
         headLines = ["date - time", "team1", "team2", "team1 market value",
                      "team2 market value", "audience", "home team name",
-                     "result"]
-        csvFile[0] = headLines
-        i = 1
+                     "team1 table position", "team2 table position",
+                     "team1 league titles", "team2 league titles",
+                     "team1 champions league titles", "team2 champions league titles",
+                     "team1 europa league titles", "team2 europa league titles", "team1 Rank", "team2 Rank"
+                                                                                               "result"]
+        csvFile.append(headLines)
         # now generate the match attributes for ever match,
         # in the league and insert into csvFile
         for gameLine in games:
-            csvFile[i] = self.insertGameAttributes(gameLine)
-            i += 1
+            processedGameLine = self.processGameAttributes(gameLine)
+            csvFile.append(processedGameLine)
+            self.UpdateGameInfoIntoLeague(processedGameLine[1], processedGameLine[2], processedGameLine[15])
 
-    def insertGameAttributes(self, gameLine):
-        team1Id = self.getTeamIdByName(gameLine[1])
-        team2Id = self.getTeamIdByName(gameLine[2])
-        processedGameLine = [gameLine[0], gameLine[1], gameLine[2], self.getMarketValue(team1Id),
-                             self.getMarketValue(team2Id), gameLine[32],
-                             self.getHomeTeam(gameLine, team1Id, team2Id),
+    def UpdateGameInfoIntoLeague(self, teamId1, teamId2, result):
+        if result == 1:
+            self.updateTeamGameWinner(teamId1)
+            self.updateTeamGameLoser(teamId2)
+        elif result == 2:
+            self.updateTeamGameWinner(teamId2)
+            self.updateTeamGameLoser(teamId1)
+        else:
+            self.updateTeamGameDraw(teamId1)
+            self.updateTeamGameDraw(teamId2)
+        self.updateTeamsPosInTable()
+
+    def updateTeamsPosInTable(self):
+        self.teams = sorted(self.teams, key=lambda team: team.teamPoints, reverse=True)
+
+    def updateTeamGameWinner(self, teamId):
+        i = self.getTeamIndexById(teamId)
+        self.teams[i].matchPlayed += 1
+        self.teams[i].teamPoints += 3
+        self.teams[i].lastFiveGamesResult = updateTeamHistory(self.teams[i].lastFiveGamesResult, 'W')
+
+    def updateTeamGameLoser(self, teamId):
+        i = self.getTeamIndexById(teamId)
+        self.teams[i].matchPlayed += 1
+        self.teams[i].lastFiveGamesResult = updateTeamHistory(self.teams[i].lastFiveGamesResult, 'L')
+
+    def updateTeamGameDraw(self, teamId):
+        i = self.getTeamIndexById(teamId)
+        self.teams[i].matchPlayed += 1
+        self.teams[i].teamPoints += 1
+        self.teams[i].lastFiveGamesResult = updateTeamHistory(self.teams[i].lastFiveGamesResult, 'D')
+
+    def getTeamIndexById(self, teamId):
+        for i in range(0, len(self.teams)):
+            if self.teams[i].teamId == teamId:
+                return teamId
+        return 0
+
+    def processGameAttributes(self, gameLine):
+        team1 = self.getTeamByName(gameLine[1])
+        team2 = self.getTeamByName(gameLine[2])
+        processedGameLine = [gameLine[0], gameLine[1], gameLine[2], self.getMarketValue(team1.teamId),
+                             self.getMarketValue(team2.teamId), gameLine[32],
+                             self.getHomeTeam(gameLine, team1.teamId, team2.teamId),
+                             self.getTeamPositionById(team1.teamId), self.getTeamPositionById(team2.teamId),
+                             team1.laLigaTitles, team2.laLigaTitles, team1.championsLeagueTitles,
+                             team2.championsLeagueTitles, team1.europaLeagueTitles, team2.europaLeagueTitles,
+                             team1.rank, team2.rank,
                              getResult(gameLine)]
         return processedGameLine
+
+    def getTeamPositionById(self, teamId):
+        for i in range(1, len(self.teams)):
+            if self.teams[i].teamId == teamId:
+                return i
+        return 0
 
     def getHomeTeam(self, gameLine, team1Id, team2Id):
         stadium = gameLine[33]
         for team in self.teams:
-            if (team.teamId == team1Id | team.teamId == team2Id) & (team.stadium == stadium):
+            if (team.teamId == team1Id or team.teamId == team2Id) and (team.stadium == stadium):
                 return team.name
 
     def updateGameInfo(self, game):
@@ -72,14 +124,20 @@ class League:
             if team.teamId == teamId:
                 return team
 
-    def getTeamIdByName(self, teamName):
+    def getTeamByName(self, teamName):
         for team in self.teams:
             if teamName == team.name:
-                return team.teamId
+                return team
 
     def getMarketValue(self, teamId):
         team = self.getTeamById(teamId)
         return team.marketValue
+
+
+def updateTeamHistory(gamesHistory, char):
+    gamesHistory.insert(0, char)
+    gamesHistory.pop()
+    return gamesHistory
 
 
 def processMarketValue(marketValueString):
