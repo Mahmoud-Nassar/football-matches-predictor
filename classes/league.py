@@ -12,32 +12,34 @@ class League:
         self.games = []
         self.insertTeamsInfo(csvTeamsPath)
         self.startLeague(csvGamesPath)
+        x = 1
 
     def insertTeamsInfo(self, csvTeamsPath):
         teams = np.genfromtxt(csvTeamsPath, delimiter=',', names=True, dtype=None, encoding=None)
         self.teams.append(Team())
         for team in teams:
             self.teams.append(Team(team[0], team[1], team[2],
-                                   team[3], team[4], processMarketValue(team[5]), team[7], team[8]))
+                                   team[3], team[4], processMarketValue(team[5]), team[7], team[8], 0))
 
     def startLeague(self, csvGamesPath):
         games = np.genfromtxt(csvGamesPath, delimiter=',', names=True, dtype=None, encoding=None)
         # creating the matches CSV file
-        csvFile = [[]]
         headLines = ["date - time", "team1", "team2", "team1 market value",
                      "team2 market value", "audience", "home team name",
                      "team1 table position", "team2 table position",
                      "team1 league titles", "team2 league titles",
                      "team1 champions league titles", "team2 champions league titles",
-                     "team1 europa league titles", "team2 europa league titles", "team1 Rank", "team2 Rank"
-                                                                                               "result"]
-        csvFile.append(headLines)
+                     "team1 europa league titles", "team2 europa league titles", "team1 Rank", "team2 Rank",
+                     "result"]
+        csvFile = [headLines]
         # now generate the match attributes for ever match,
         # in the league and insert into csvFile
         for gameLine in games:
             processedGameLine = self.processGameAttributes(gameLine)
             csvFile.append(processedGameLine)
-            self.UpdateGameInfoIntoLeague(processedGameLine[1], processedGameLine[2], processedGameLine[15])
+            self.UpdateGameInfoIntoLeague(self.getTeamByName(processedGameLine[1]).teamId,
+                                          self.getTeamByName(processedGameLine[2]).teamId,
+                                          processedGameLine[17])
 
     def UpdateGameInfoIntoLeague(self, teamId1, teamId2, result):
         if result == 1:
@@ -74,7 +76,7 @@ class League:
     def getTeamIndexById(self, teamId):
         for i in range(0, len(self.teams)):
             if self.teams[i].teamId == teamId:
-                return teamId
+                return i
         return 0
 
     def processGameAttributes(self, gameLine):
