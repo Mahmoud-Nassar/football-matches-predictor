@@ -1,18 +1,28 @@
 import pandas as pd
 import numpy as np
+import datetime
 from setuptools.command.test import test
-
+import csv
 from classes.Team import Team
 from classes.Game import Game
 
+attributes = ["team1 ID", "team2 ID", "team1 market value",
+              "team2 market value", "audience", "home team ",
+              "team1 table position", "team2 table position",
+              "team1 league titles", "team2 league titles",
+              "team1 champions league titles", "team2 champions league titles",
+              "team1 europa league titles", "team2 europa league titles",
+              "team1 Rank", "team2 Rank"]
+
+classificationField = ["result"]
+
 
 class League:
-    def __init__(self, csvTeamsPath, csvGamesPath):
+    def __init__(self, csvTeamsPath, csvGamesPath, csvWritePath):
         self.teams = []
         self.games = []
         self.insertTeamsInfo(csvTeamsPath)
-        self.startLeague(csvGamesPath)
-        x = 1
+        self.RunLeagueAndProcessData(csvGamesPath, csvWritePath)
 
     def insertTeamsInfo(self, csvTeamsPath):
         teams = np.genfromtxt(csvTeamsPath, delimiter=',', names=True, dtype=None, encoding=None)
@@ -21,25 +31,34 @@ class League:
             self.teams.append(Team(team[0], team[1], team[2],
                                    team[3], team[4], processMarketValue(team[5]), team[7], team[8], 0))
 
-    def startLeague(self, csvGamesPath):
+    def RunLeagueAndProcessData(self, csvGamesPath, csvWritePath):
         games = np.genfromtxt(csvGamesPath, delimiter=',', names=True, dtype=None, encoding=None)
         # creating the matches CSV file
-        headLines = ["date - time", "team1", "team2", "team1 market value",
-                     "team2 market value", "audience", "home team name",
-                     "team1 table position", "team2 table position",
-                     "team1 league titles", "team2 league titles",
-                     "team1 champions league titles", "team2 champions league titles",
-                     "team1 europa league titles", "team2 europa league titles", "team1 Rank", "team2 Rank",
-                     "result"]
-        csvFile = [headLines]
+        csvFile = [attributes + classificationField]
         # now generate the match attributes for ever match,
         # in the league and insert into csvFile
         for gameLine in games:
             processedGameLine = self.processGameAttributes(gameLine)
             csvFile.append(processedGameLine)
-            self.UpdateGameInfoIntoLeague(self.getTeamByName(processedGameLine[1]).teamId,
-                                          self.getTeamByName(processedGameLine[2]).teamId,
-                                          processedGameLine[17])
+            self.UpdateGameInfoIntoLeague(self.getTeamByName(processedGameLine[0]).teamId,
+                                          self.getTeamByName(processedGameLine[1]).teamId,
+                                          processedGameLine[16])
+        ########################################################################
+        # # Open a file for writing train objects
+        # with open(csvWritePath+'processedGamesTrain.csv', 'w', newline='') as csvProcessedGamesTrainFile:
+        #     writer = csv.writer(csvProcessedGamesTrainFile, delimiter=',')
+        #     writer.writerow(csvFile[0])
+        #     writer.writerows(csvFile[1:301])
+        # # Open a file for writing test objects
+        # with open(csvWritePath+'processedGamesTest.csv', 'w', newline='') as csvProcessedGamesTestFile:
+        #     writer2 = csv.writer(csvProcessedGamesTestFile, delimiter=',')
+        #     writer2.writerow(csvFile[0])
+        #     writer2.writerows(csvFile[301:381])
+        ####################################################################
+        # Open a file for writing train objects
+        with open(csvWritePath + 'processedGames.csv', 'w', newline='') as csvProcessedGamesTrainFile:
+            writer = csv.writer(csvProcessedGamesTrainFile, delimiter=',')
+            writer.writerows(csvFile)
 
     def UpdateGameInfoIntoLeague(self, teamId1, teamId2, result):
         if result == 1:
@@ -82,8 +101,12 @@ class League:
     def processGameAttributes(self, gameLine):
         team1 = self.getTeamByName(gameLine[1])
         team2 = self.getTeamByName(gameLine[2])
-        processedGameLine = [gameLine[0], gameLine[1], gameLine[2], self.getMarketValue(team1.teamId),
-                             self.getMarketValue(team2.teamId), gameLine[32],
+        # dateTime = processDateAndTime(gameLine[0])
+        processedGameLine = [self.getTeamByName(gameLine[1]).teamId,
+                             self.getTeamByName(gameLine[2]).teamId,
+                             self.getMarketValue(team1.teamId),
+                             self.getMarketValue(team2.teamId),
+                             extract_numeric_value(gameLine[32]),
                              self.getHomeTeam(gameLine, team1.teamId, team2.teamId),
                              self.getTeamPositionById(team1.teamId), self.getTeamPositionById(team2.teamId),
                              team1.laLigaTitles, team2.laLigaTitles, team1.championsLeagueTitles,
@@ -101,8 +124,11 @@ class League:
     def getHomeTeam(self, gameLine, team1Id, team2Id):
         stadium = gameLine[33]
         for team in self.teams:
-            if (team.teamId == team1Id or team.teamId == team2Id) and (team.stadium == stadium):
-                return team.name
+            if team.stadium == stadium:
+                if team.teamId == team1Id:
+                    return 1
+                elif team.teamId == team2Id:
+                    return 2
 
     def updateGameInfo(self, game):
         team1 = self.getTeamById(game.team1Id)
@@ -130,10 +156,35 @@ class League:
         for team in self.teams:
             if teamName == team.name:
                 return team
+        return Team()
 
     def getMarketValue(self, teamId):
         team = self.getTeamById(teamId)
         return team.marketValue
+
+
+# def processDateAndTime(dateAndTime):
+#     i = 0
+#     date = ""
+#     time = ""
+#     # The format of the string date
+#     date_format = '%d.%m.%Y'
+#     while dateAndTime[i] != " ":
+#         date += dateAndTime[i]
+#         i += 1
+#     i += 1
+#     while i < len(dateAndTime):
+#         time += dateAndTime[i]
+#         i += 1
+#     return [date, time]
+
+
+def extract_numeric_value(s: str, default: float = 0.0) -> float:
+    """Extracts the numeric value from a string and returns it as a float."""
+    s = ''.join(c for c in s if c.isnumeric() or c == '.')
+    if not s:
+        return default
+    return float(s)
 
 
 def updateTeamHistory(gamesHistory, char):
