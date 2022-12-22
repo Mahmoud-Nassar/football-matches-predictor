@@ -1,5 +1,6 @@
 from classes.League import League
-from classifcation.decisionTree import decisionTreeClassification
+from classifcation.decisionTree import decisionTreeBasicClassification
+from classifcation.decisionTree import decisionTreeChangeTestSizeClassification
 from classifcation.KNearestNeighbors import kNearestNeighborsClassification
 
 csvTeamsPath = "dataSet\season_17_18\\teams\\teams.csv"
@@ -8,5 +9,5 @@ csvWritePath = "dataSet\\"
 
 if __name__ == '__main__':
     league = League(csvTeamsPath, csvGamesPath, csvWritePath)
-    decisionTreeClassification()
-    kNearestNeighborsClassification()
+    # decisionTreeBasicClassification()
+    decisionTreeChangeTestSizeClassification()
