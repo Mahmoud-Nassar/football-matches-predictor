@@ -40,8 +40,8 @@ class League:
         for gameLine in games:
             processedGameLine = self.processGameAttributes(gameLine)
             csvFile.append(processedGameLine)
-            self.UpdateGameInfoIntoLeague(self.getTeamByName(processedGameLine[0]).teamId,
-                                          self.getTeamByName(processedGameLine[1]).teamId,
+            self.UpdateGameInfoIntoLeague(self.getTeamByName(gameLine[1]).teamId,
+                                          self.getTeamByName(gameLine[2]).teamId,
                                           processedGameLine[16])
         ########################################################################
         # # Open a file for writing train objects
@@ -116,10 +116,13 @@ class League:
         return processedGameLine
 
     def getTeamPositionById(self, teamId):
+        team = self.getTeamById(teamId)
+        if team.matchPlayed == 0:
+            return 10
         for i in range(1, len(self.teams)):
             if self.teams[i].teamId == teamId:
                 return i
-        return 0
+        return 10
 
     def getHomeTeam(self, gameLine, team1Id, team2Id):
         stadium = gameLine[33]
