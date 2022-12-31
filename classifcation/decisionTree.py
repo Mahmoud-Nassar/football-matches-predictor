@@ -91,8 +91,8 @@ class DTClassifier:
             precision = precisionSum / 5
             precisions.append(precision)
         maxIndex = np.argmax(precisions)
-        create_graph(sizes, precisions, "test sizes percentage",
-                     "precisions", "results\\test size Experiment")
+        create_graph(sizes, precisions, "test size (percentage of the data set)",
+                     "precision in %", "results\\test size experiment.jpg")
         return [sizes[maxIndex], precisions[maxIndex]]
 
     @staticmethod
@@ -114,39 +114,6 @@ class DTClassifier:
             precision = precisionSum / 5
             precisions.append(precision)
         maxIndex = np.argmax(precisions)
-        return [precisions, depths[maxIndex]]
-
-
-def decisionTreeBasicClassification():
-    """this function applies a simple and very basic classification
-     according to the default classification given in the class sklearn.tree"""
-    precisionSum = 0
-    for i in range(0, 10):
-        classifier = DTClassifier()
-        classifier.train()
-        classifier.predict()
-        precisionSum += classifier.getPrecision()
-    print("precision : {:.2f}%".format(precisionSum / 10))
-
-# def decisionTreeChangeTestSizeClassification(TestSize):
-#     """this function applies the decision tree with test size 0.3
-#         of the total examples given"""
-#     precisionSum = 0
-#     for i in range(0, 5):
-#         classifier = DTClassifier(None, testSize=size)
-#         classifier.train()
-#         classifier.predict()
-#         precisionSum += classifier.getPrecision()
-#     print("precision : {:.2f}%".format(precisionSum / 5))
-
-
-# def decisionTreeChangeMaxDepth(maxDepth):
-#     """   this function applies the decision tree with maximum
-#     depth = parameter maxDepth """
-#     precisionSum = 0
-#     for i in range(0, 10):
-#         classifier = DTClassifier(maxDepth)
-#         classifier.train()
-#         classifier.predict()
-#         precisionSum += classifier.getPrecision()
-#     print("precision : {:.2f}%".format(precisionSum / 10))
+        create_graph(depths, precisions, " tree maximum depth",
+                     "precision in %", "results\\tree depths experiment.jpg")
+        return [depths[maxIndex], precisions[maxIndex]]
