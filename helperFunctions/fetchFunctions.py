@@ -1,4 +1,4 @@
-import pandas as pd
-
-# helper functions for class league
-def fetchTeamsMarketValue(teams):
+# import pandas as pd
+#
+# # helper functions for class league
+# def fetchTeamsMarketValue(teams):

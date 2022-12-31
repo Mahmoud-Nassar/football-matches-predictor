@@ -7,6 +7,9 @@ csvWritePath = "dataSet\\"
 
 if __name__ == '__main__':
     league = League(csvTeamsPath, csvGamesPath, csvWritePath)
-    DT.decisionTreeBasicClassification()
-    DT.decisionTreeChangeTestSizeClassification(0.3)
-    DT.decisionTreeChangeMaxDepth(2)
+    # DT.decisionTreeBasicClassification()
+    # DT.decisionTreeChangeTestSizeClassification(0.3)
+    # DT.decisionTreeChangeMaxDepth(2)
+    # scrap()
+    print("decision tree basic classification : {:.2f}%"
+          .format(DT.decisionTreeBasicClassification()))

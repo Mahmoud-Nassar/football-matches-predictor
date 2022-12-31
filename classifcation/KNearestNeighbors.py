@@ -3,12 +3,12 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
 from classes.League import attributes
 from classes.League import classificationField
-from classifcation.helperFunctions import csvProccessedDataReadPath
+from classifcation.helperFunctions import csvProcessedDataReadPath
 
 
 def kNearestNeighborsClassification():
     # Read the CSV file into a DataFrame
-    df = pd.read_csv(csvProccessedDataReadPath + 'processedGames.csv')
+    df = pd.read_csv(csvProcessedDataReadPath + 'processedGames.csv')
 
     # Select the features
     X = df[attributes]
