@@ -1,10 +1,6 @@
-import pandas as pd
 import numpy as np
-import datetime
-from setuptools.command.test import test
 import csv
 from classes.Team import Team
-from classes.Game import Game
 
 attributes = ["team1 ID", "team2 ID", "team1 market value",
               "team2 market value", "audience", "home team ",
@@ -106,7 +102,7 @@ class League:
                              self.getTeamByName(gameLine[2]).teamId,
                              self.getMarketValue(team1.teamId),
                              self.getMarketValue(team2.teamId),
-                             extract_numeric_value(gameLine[32]),
+                             extract_numeric_value(gameLine[32])/1000,
                              self.getHomeTeam(gameLine, team1.teamId, team2.teamId),
                              self.getTeamPositionById(team1.teamId), self.getTeamPositionById(team2.teamId),
                              team1.laLigaTitles, team2.laLigaTitles, team1.championsLeagueTitles,

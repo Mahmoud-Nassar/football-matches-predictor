@@ -9,15 +9,7 @@ from classifcation.helperFunctions import create_graph
 
 
 class DTClassifier:
-    def __init__(self):
-        df = pd.read_csv(csvProcessedDataReadPath + 'processedGames.csv')
-        X = df[attributes]
-        y = df[classificationField]
-        self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(X, y, test_size=0.2)
-        self.Classifier = DecisionTreeClassifier()
-        self.y_pred = []
-
-    def __init__(self, maxDepth=None, testSize=0.2):
+    def __init__(self, maxDepth, testSize=0.2):
         df = pd.read_csv(csvProcessedDataReadPath + 'processedGames.csv')
         X = df[attributes]
         y = df[classificationField]
@@ -66,7 +58,7 @@ class DTClassifier:
              according to the default classification given in the class sklearn.tree"""
         precisionSum = 0
         for i in range(0, 10):
-            classifier = DTClassifier()
+            classifier = DTClassifier(None, None)
             classifier.train()
             classifier.predict()
             precisionSum += classifier.getPrecision()
@@ -107,7 +99,7 @@ class DTClassifier:
         for maxDepth in depths:
             precisionSum = 0
             for i in range(0, 5):
-                classifier = DTClassifier(maxDepth)
+                classifier = DTClassifier(None, maxDepth)
                 classifier.train()
                 classifier.predict()
                 precisionSum += classifier.getPrecision()
@@ -117,3 +109,33 @@ class DTClassifier:
         create_graph(depths, precisions, " tree maximum depth",
                      "precision in %", "results\\tree depths experiment.jpg")
         return [depths[maxIndex], precisions[maxIndex]]
+
+    @staticmethod
+    def getBestPrecision(maxDepth, testSize):
+        precisionSum = 0
+        for i in range(0, 5):
+            classifier = DTClassifier(maxDepth=maxDepth, testSize=testSize)
+            classifier.train()
+            classifier.predict()
+            precisionSum += classifier.getPrecision()
+        precision = precisionSum / 5
+        return precision
+
+    # @staticmethod
+    # def experimentOnAttributeImportance():
+    #     """ @:param depths : a list that contains the depths
+    #     which the experiment will be done on, checks and @:returns
+    #     in returnedValue[0] a list of precisions of the given depths
+    #     for each depth,also @:returns in returnedValue[1] one of the
+    #      depths that maximize the precision
+    #      """
+    #     # importanceMap = dict.fromkeys(attributes, 1)
+    #     importanceMap = {'0': 1, '1': 2, '2': '1'}
+    #     precisionSum = 0
+    #     for i in range(0, 5):
+    #         classifier = DTClassifier(importanceMap, None)
+    #         classifier.train()
+    #         classifier.predict()
+    #         precisionSum += classifier.getPrecision()
+    #     precision = precisionSum / 5
+    #     return precision
