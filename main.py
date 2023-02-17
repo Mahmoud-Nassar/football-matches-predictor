@@ -15,8 +15,10 @@ if __name__ == '__main__':
     ##################################################################
     ####################### DECISION-TREE  ###########################
     print("Decision Tree: ")
+
+    er0 = dt.decisionTreeBasicClassification()
     print("        -basic classification precision: {:.2f}%"
-          .format(dt.decisionTreeBasicClassification()))
+          .format(er0))
 
     er1 = dt.experimentOnTestSize([0.1, 0.2, 0.3, 0.4])
     print("        -test size experiment: best test size is {}% of the data "
@@ -29,12 +31,14 @@ if __name__ == '__main__':
           .format(int(er2[0]), er2[1]))
 
     print("    -best precision considering all experiments results: {:.2f}%"
-          .format(dt.getBestPrecision(er2[0], er1[0])))
+          .format(dt.getBestPrecision(er0, er2, er1)))
     ##################################################################
     ####################### KNN  #####################################
     print("KNN: ")
+
+    er5 = knn.knnBasicClassification()
     print("        -basic classification precision: {:.2f}%"
-          .format(knn.knnBasicClassification()))
+          .format(er5))
 
     er3 = knn.experimentOnTestSize([0.1, 0.2, 0.3, 0.4])
     print("        -test size experiment: best test size is {}% of the data "
@@ -48,4 +52,4 @@ if __name__ == '__main__':
           .format(int(er4[0]), er4[1]))
 
     print("    -best precision considering all experiments results: {:.2f}%"
-          .format(dt.getBestPrecision(er4[0], er3[0])))
+          .format(knn.getBestPrecision(er5, er4, er3)))
