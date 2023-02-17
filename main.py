@@ -1,19 +1,19 @@
-from classes.League import League
+from classes.League import processData
 from classification.decisionTree import DTClassifier as dt
 from classification.KNearestNeighbors import KNNClassifier as knn
-from scrapping.PlayerRank import get_fifa_rating
-from classes.Player import extractPlayers
-
-csvTeamsPath = "dataSet\season_17_18\\teams\\teams.csv"
-csvGamesPath = "dataSet\season_17_18\games\\games.csv"
-csvWritePath = "dataSet\\"
 
 if __name__ == '__main__':
+    processData()
+
+    # #################################################
+    # classifier = dt(None, None)
+    # classifier.train()
+    # classifier.predict()
+    # classifier.analyze()
+    # #################################################
+    #
     ##################################################################
     ####################### DECISION-TREE  ###########################
-    # process data
-    league = League(csvTeamsPath, csvGamesPath, csvWritePath)
-
     print("Decision Tree: ")
     print("        -basic classification precision: {:.2f}%"
           .format(dt.decisionTreeBasicClassification()))
@@ -23,7 +23,7 @@ if __name__ == '__main__':
           ",and it`s resulted precision is: {:.2f}%"
           .format(int(er1[0] * 100), er1[1]))
 
-    er2 = dt.experimentOnMaxDepth([2, 3, 4, 5])
+    er2 = dt.experimentOnMaxDepth([2, 4, 6, 8, 10, 12, 14, 16, 18, 20])
     print("        -maximum depth experiment: the best max depth is {}"
           ",and it`s resulted precision is: {:.2f}%"
           .format(int(er2[0]), er2[1]))
@@ -32,8 +32,6 @@ if __name__ == '__main__':
           .format(dt.getBestPrecision(er2[0], er1[0])))
     ##################################################################
     ####################### KNN  #####################################
-    # process data
-    league = League(csvTeamsPath, csvGamesPath, csvWritePath)
     print("KNN: ")
     print("        -basic classification precision: {:.2f}%"
           .format(knn.knnBasicClassification()))
@@ -43,7 +41,7 @@ if __name__ == '__main__':
           ",and it`s resulted precision is: {:.2f}%"
           .format(int(er3[0] * 100), er3[1]))
 
-    er4 = knn.experimentOnNNeighbors([3, 4, 5, 6])
+    er4 = knn.experimentOnNNeighbors([10, 20, 30, 40, 50, 60, 70, 80, 90, 100])
     print("        -number of nearst neighbors experiment: the best "
           "number of neighbors is {}"
           ",and it`s \n         resulted precision is: {:.2f}%"

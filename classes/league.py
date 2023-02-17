@@ -1,15 +1,20 @@
 import numpy as np
 import csv
+import os
 from classes.Team import Team
+from classification.helperFunctions import dataSetPath, csvWritePath
 
-attributes = ["team1 ID", "team2 ID", "team1 market value",
-              "team2 market value", "audience", "home team ",
-              "team1 table position", "team2 table position",
+attributes = ["team1 market value",
+              "team2 market value", "audience", "team1 table position",
+              "team2 table position",
               "team1 league titles", "team2 league titles",
               "team1 champions league titles", "team2 champions league titles",
               "team1 europa league titles", "team2 europa league titles",
               "team1 Rank", "team2 Rank"]
-
+# attributes = ["team1 ID", "team2 ID",  "audience",
+#               "team1 table position", "team2 table position",
+#               "team1 league titles", "team2 league titles",
+#               "team1 Rank", "team2 Rank"]
 classificationField = ["result"]
 
 
@@ -30,15 +35,15 @@ class League:
     def RunLeagueAndProcessData(self, csvGamesPath, csvWritePath):
         games = np.genfromtxt(csvGamesPath, delimiter=',', names=True, dtype=None, encoding=None)
         # creating the matches CSV file
-        csvFile = [attributes + classificationField]
-        # now generate the match attributes for ever match,
+        csvFile = []  # [attributes + classificationField]
+        # now generate the match attributes for every match,
         # in the league and insert into csvFile
         for gameLine in games:
             processedGameLine = self.processGameAttributes(gameLine)
             csvFile.append(processedGameLine)
             self.UpdateGameInfoIntoLeague(self.getTeamByName(gameLine[1]).teamId,
                                           self.getTeamByName(gameLine[2]).teamId,
-                                          processedGameLine[16])
+                                          processedGameLine[13])
         ########################################################################
         # # Open a file for writing train objects
         # with open(csvWritePath+'processedGamesTrain.csv', 'w', newline='') as csvProcessedGamesTrainFile:
@@ -52,7 +57,8 @@ class League:
         #     writer2.writerows(csvFile[301:381])
         ####################################################################
         # Open a file for writing train objects
-        with open(csvWritePath + 'processedGames.csv', 'w', newline='') as csvProcessedGamesTrainFile:
+        with open(csvWritePath + 'processedGames.csv', 'a', newline='') as \
+                csvProcessedGamesTrainFile:
             writer = csv.writer(csvProcessedGamesTrainFile, delimiter=',')
             writer.writerows(csvFile)
 
@@ -98,12 +104,9 @@ class League:
         team1 = self.getTeamByName(gameLine[1])
         team2 = self.getTeamByName(gameLine[2])
         # dateTime = processDateAndTime(gameLine[0])
-        processedGameLine = [self.getTeamByName(gameLine[1]).teamId,
-                             self.getTeamByName(gameLine[2]).teamId,
-                             self.getMarketValue(team1.teamId),
+        processedGameLine = [self.getMarketValue(team1.teamId),
                              self.getMarketValue(team2.teamId),
-                             extract_numeric_value(gameLine[32])/1000,
-                             self.getHomeTeam(gameLine, team1.teamId, team2.teamId),
+                             extract_numeric_value(gameLine[32]) / 1000,
                              self.getTeamPositionById(team1.teamId), self.getTeamPositionById(team2.teamId),
                              team1.laLigaTitles, team2.laLigaTitles, team1.championsLeagueTitles,
                              team2.championsLeagueTitles, team1.europaLeagueTitles, team2.europaLeagueTitles,
@@ -231,3 +234,16 @@ def insertGameToHistory(team, result):
     for i in [0, 3]:
         team.lastFiveGamesResult[i] = team.lastFiveGamesResult[i + 1]
     team.lastFiveGamesResult[4] = result
+
+
+def processData():
+    # league = League(csvTeamsPath, csvGamesPath, csvWritePath)
+    with open(csvWritePath + 'processedGames.csv', 'w', newline='') as \
+            csvProcessedGamesTrainFile:
+        writer = csv.writer(csvProcessedGamesTrainFile, delimiter=',')
+        writer.writerows([attributes + classificationField])
+    for season in os.listdir(dataSetPath):
+        seasonFolderPath = os.path.join(dataSetPath, season)
+        if os.path.isdir(seasonFolderPath):
+            league = League(seasonFolderPath + "\\teams\\teams.csv",
+                            seasonFolderPath + "\games\\games.csv", csvWritePath)
