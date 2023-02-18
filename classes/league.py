@@ -2,20 +2,8 @@ import numpy as np
 import csv
 import os
 from classes.Team import Team
-from classification.helperFunctions import dataSetPath, csvWritePath
-
-attributes = ["team1 market value",
-              "team2 market value", "audience", "team1 table position",
-              "team2 table position",
-              "team1 league titles", "team2 league titles",
-              "team1 champions league titles", "team2 champions league titles",
-              "team1 europa league titles", "team2 europa league titles",
-              "team1 Rank", "team2 Rank"]
-# attributes = ["team1 ID", "team2 ID",  "audience",
-#               "team1 table position", "team2 table position",
-#               "team1 league titles", "team2 league titles",
-#               "team1 Rank", "team2 Rank"]
-classificationField = ["result"]
+from helperFunctionsAndVariables.globalVariables import \
+    dataSetPath, csvWritePath,attributes,classificationField
 
 
 class League:
@@ -43,7 +31,7 @@ class League:
             csvFile.append(processedGameLine)
             self.UpdateGameInfoIntoLeague(self.getTeamByName(gameLine[1]).teamId,
                                           self.getTeamByName(gameLine[2]).teamId,
-                                          processedGameLine[13])
+                                          processedGameLine[len(processedGameLine)-1])
         ########################################################################
         # # Open a file for writing train objects
         # with open(csvWritePath+'processedGamesTrain.csv', 'w', newline='') as csvProcessedGamesTrainFile:
@@ -104,12 +92,14 @@ class League:
         team1 = self.getTeamByName(gameLine[1])
         team2 = self.getTeamByName(gameLine[2])
         # dateTime = processDateAndTime(gameLine[0])
-        processedGameLine = [self.getMarketValue(team1.teamId),
-                             self.getMarketValue(team2.teamId),
+        processedGameLine = [team1.getTeamHistoryPoints(),
+                             team2.getTeamHistoryPoints(),
+                             team1.marketValue,
+                             team2.marketValue,
                              extract_numeric_value(gameLine[32]) / 1000,
                              self.getTeamPositionById(team1.teamId), self.getTeamPositionById(team2.teamId),
-                             team1.laLigaTitles, team2.laLigaTitles, team1.championsLeagueTitles,
-                             team2.championsLeagueTitles, team1.europaLeagueTitles, team2.europaLeagueTitles,
+                             #team1.laLigaTitles, team2.laLigaTitles, team1.championsLeagueTitles,
+                             #team2.championsLeagueTitles, team1.europaLeagueTitles, team2.europaLeagueTitles,
                              team1.rank, team2.rank,
                              getResult(gameLine)]
         return processedGameLine
@@ -160,9 +150,9 @@ class League:
                 return team
         return Team()
 
-    def getMarketValue(self, teamId):
-        team = self.getTeamById(teamId)
-        return team.marketValue
+    # def getMarketValue(self, teamId):
+    #     team = self.getTeamById(teamId)
+    #     return team.marketValue
 
 
 # def processDateAndTime(dateAndTime):
@@ -205,6 +195,7 @@ def processMarketValue(marketValueString):
     # because the numbers in this matter is really big -> divide every number in million
     if marketValueString[i] == 'b':
         marketValueNum *= 1000
+    marketValueNum /= 10
     return marketValueNum
 
 

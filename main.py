@@ -1,8 +1,12 @@
 from classes.League import processData
 from classification.decisionTree import DTClassifier as dt
 from classification.KNearestNeighbors import KNNClassifier as knn
+from classification.RandomForest import RFClassifier as rf
+# from helperFunctionsAndVariables.fetchFunctions import cleanLinks
+
 
 if __name__ == '__main__':
+
     processData()
 
     # #################################################
@@ -45,7 +49,7 @@ if __name__ == '__main__':
           ",and it`s resulted precision is: {:.2f}%"
           .format(int(er3[0] * 100), er3[1]))
 
-    er4 = knn.experimentOnNNeighbors([10, 20, 30, 40, 50, 60, 70, 80, 90, 100])
+    er4 = knn.experimentOnNNeighbors([11, 21, 31, 41, 51, 61, 71, 81, 91, 101])
     print("        -number of nearst neighbors experiment: the best "
           "number of neighbors is {}"
           ",and it`s \n         resulted precision is: {:.2f}%"
@@ -53,3 +57,16 @@ if __name__ == '__main__':
 
     print("    -best precision considering all experiments results: {:.2f}%"
           .format(knn.getBestPrecision(er5, er4, er3)))
+    ##################################################################
+    ####################### Random Forest  #####################################
+    print("Random Forest: ")
+
+    er6 = rf.randomForestBasicClassification()
+    print("        -basic classification precision: {:.2f}%"
+          .format(er6))
+
+    er7 = rf.experimentOnTestSize([0.1, 0.2, 0.3, 0.4])
+    print("        -test size experiment: best test size is {}% of the data "
+          ",and it`s resulted precision is: {:.2f}%"
+          .format(int(er7[0] * 100), er7[1]))
+
