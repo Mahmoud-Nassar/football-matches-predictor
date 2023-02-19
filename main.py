@@ -2,11 +2,12 @@ from classes.League import processData
 from classification.decisionTree import DTClassifier as dt
 from classification.KNearestNeighbors import KNNClassifier as knn
 from classification.RandomForest import RFClassifier as rf
-# from helperFunctionsAndVariables.fetchFunctions import cleanLinks
+from scrapping.fetchFunctions import cleanLinks
 
+testSizeArray = [0.15, 0.2, 0.25, 0.3, 0.4]
 
 if __name__ == '__main__':
-
+    # cleanLinks()
     processData()
 
     # #################################################
@@ -24,12 +25,12 @@ if __name__ == '__main__':
     print("        -basic classification precision: {:.2f}%"
           .format(er0))
 
-    er1 = dt.experimentOnTestSize([0.1, 0.2, 0.3, 0.4])
+    er1 = dt.experimentOnTestSize(testSizeArray)
     print("        -test size experiment: best test size is {}% of the data "
           ",and it`s resulted precision is: {:.2f}%"
           .format(int(er1[0] * 100), er1[1]))
 
-    er2 = dt.experimentOnMaxDepth([2, 4, 6, 8, 10, 12, 14, 16, 18, 20])
+    er2 = dt.experimentOnMaxDepth([5, 10, 20, 30, 41, 52, 63])
     print("        -maximum depth experiment: the best max depth is {}"
           ",and it`s resulted precision is: {:.2f}%"
           .format(int(er2[0]), er2[1]))
@@ -44,7 +45,7 @@ if __name__ == '__main__':
     print("        -basic classification precision: {:.2f}%"
           .format(er5))
 
-    er3 = knn.experimentOnTestSize([0.1, 0.2, 0.3, 0.4])
+    er3 = knn.experimentOnTestSize(testSizeArray)
     print("        -test size experiment: best test size is {}% of the data "
           ",and it`s resulted precision is: {:.2f}%"
           .format(int(er3[0] * 100), er3[1]))
@@ -65,8 +66,12 @@ if __name__ == '__main__':
     print("        -basic classification precision: {:.2f}%"
           .format(er6))
 
-    er7 = rf.experimentOnTestSize([0.1, 0.2, 0.3, 0.4])
+    er7 = rf.experimentOnTestSize(testSizeArray)
     print("        -test size experiment: best test size is {}% of the data "
           ",and it`s resulted precision is: {:.2f}%"
           .format(int(er7[0] * 100), er7[1]))
 
+    er8 = rf.experimentOnMaxDepth([5, 20, 30, 41, 52, 63])
+    print("        -maximum depth experiment: the best max depth is {}"
+          ",and it`s resulted precision is: {:.2f}%"
+          .format(int(er8[0]), er8[1]))

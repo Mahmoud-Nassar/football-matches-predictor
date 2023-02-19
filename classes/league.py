@@ -3,7 +3,7 @@ import csv
 import os
 from classes.Team import Team
 from helperFunctionsAndVariables.globalVariables import \
-    dataSetPath, csvWritePath,attributes,classificationField
+    dataSetPath, csvWritePath, attributes, classificationField
 
 
 class League:
@@ -28,10 +28,11 @@ class League:
         # in the league and insert into csvFile
         for gameLine in games:
             processedGameLine = self.processGameAttributes(gameLine)
-            csvFile.append(processedGameLine)
+            if processedGameLine[-1] != 0:
+                csvFile.append(processedGameLine)
             self.UpdateGameInfoIntoLeague(self.getTeamByName(gameLine[1]).teamId,
                                           self.getTeamByName(gameLine[2]).teamId,
-                                          processedGameLine[len(processedGameLine)-1])
+                                          processedGameLine[len(processedGameLine) - 1])
         ########################################################################
         # # Open a file for writing train objects
         # with open(csvWritePath+'processedGamesTrain.csv', 'w', newline='') as csvProcessedGamesTrainFile:
@@ -92,16 +93,19 @@ class League:
         team1 = self.getTeamByName(gameLine[1])
         team2 = self.getTeamByName(gameLine[2])
         # dateTime = processDateAndTime(gameLine[0])
-        processedGameLine = [team1.getTeamHistoryPoints(),
-                             team2.getTeamHistoryPoints(),
-                             team1.marketValue,
-                             team2.marketValue,
-                             extract_numeric_value(gameLine[32]) / 1000,
-                             self.getTeamPositionById(team1.teamId), self.getTeamPositionById(team2.teamId),
-                             #team1.laLigaTitles, team2.laLigaTitles, team1.championsLeagueTitles,
-                             #team2.championsLeagueTitles, team1.europaLeagueTitles, team2.europaLeagueTitles,
-                             team1.rank, team2.rank,
-                             getResult(gameLine)]
+        processedGameLine = [
+            team1.getTeamHistoryPoints(),
+            team2.getTeamHistoryPoints(),
+            team1.marketValue,
+            team2.marketValue,
+            extract_numeric_value(gameLine[32]) / 1000,
+            self.getTeamPositionById(team1.teamId), self.getTeamPositionById(team2.teamId),
+            team1.laLigaTitles, team2.laLigaTitles,
+            # team1.championsLeagueTitles,#team2.championsLeagueTitles,
+            # team1.europaLeagueTitles, team2.europaLeagueTitles,
+            team1.rank, team2.rank,
+            getResult(gameLine)
+        ]
         return processedGameLine
 
     def getTeamPositionById(self, teamId):

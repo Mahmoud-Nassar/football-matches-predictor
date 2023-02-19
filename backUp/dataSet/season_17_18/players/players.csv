@@ -1,0 +1,902 @@
+player,team
+Adria,Malaga
+Baston,Malaga
+Baysse,Malaga
+Gonzalez,Malaga
+Hernandez,Malaga
+Jimenez,Malaga
+Juanka,Malaga
+Kuzmanovic,Malaga
+Juanp,Malaga
+Recio,Malaga
+Ramis,Malaga
+Ramis,Eibar
+Charle,Eibar
+Cot,Eibar
+Dmitrovic,Eibar
+Garcia,Eibar
+Inui,Eibar
+Jordan,Eibar
+Oliveira,Eibar
+Pena,Eibar
+Alegria,Levante
+Bardhi,Levante
+Campana,Levante
+Chem,Levante
+Fernandez,Levante
+Jaso,Levante
+Lerma,Levante
+Morales,Levante
+Lopez,Levante
+Postigo,Levante
+Unal,Levante
+Unal,Villarreal
+Costa,Villarreal
+Fernandez,Villarreal
+Fornals,Villarreal
+Gonzalez,Villarreal
+Rodr,Villarreal
+Ruiz,Villarreal
+Rukavina,Villarreal
+Sansone,Villarreal
+Trigueros,Villarreal
+Andone,Dep. La Coruna
+Bakkali,Dep. La Coruna
+Borges,Dep. La Coruna
+Cartabia,Dep. La Coruna
+Guilherm,Dep. La Coruna
+Juanfra,Dep. La Coruna
+Luisinh,Dep. La Coruna
+Ruben,Dep. La Coruna
+Mosquera,Dep. La Coruna
+Schar,Dep. La Coruna
+Ramos,Dep. La Coruna
+Ramos,Real Madrid
+Benzema,Real Madrid
+Carvajal,Real Madrid
+Casemir,Real Madrid
+Fernandez,Real Madrid
+Isc,Real Madrid
+Kroos,Real Madrid
+Marcel,Real Madrid
+Modric,Real Madrid
+Navas,Real Madrid
+Alba,Barcelona
+Alcacer,Barcelona
+Busquets,Barcelona
+Deulofeu,Barcelona
+Mascherano,Barcelona
+Messi,Barcelona
+Rakitic,Barcelona
+Semedo,Barcelona
+Roberto,Barcelona
+ter,Barcelona
+Tosca,Barcelona
+Tosca,Betis
+Barragan,Betis
+Camarasa,Betis
+Feddal,Betis
+Guardado,Betis
+Joaquin,Betis
+Leiva,Betis
+Leon,Betis
+Mandi,Betis
+Narvaez,Betis
+Arrizabalaga,Ath Bilbao
+Balenziaga,Ath Bilbao
+Bena,Ath Bilbao
+de,Ath Bilbao
+Garcia,Ath Bilbao
+Laporte,Ath Bilbao
+Muniain,Ath Bilbao
+San,Ath Bilbao
+Nunez,Ath Bilbao
+Susaeta,Ath Bilbao
+Suarez,Ath Bilbao
+Suarez,Getafe
+Cala,Getafe
+Djen,Getafe
+Fajr,Getafe
+Guaita,Getafe
+Jimenez,Getafe
+Molina,Getafe
+Molinero,Getafe
+Ndiaye,Getafe
+Shibasaki,Getafe
+Corchia,Sevilla
+Gans,Sevilla
+Kjaer,Sevilla
+Lasso,Sevilla
+Lenglet,Sevilla
+Muriel,Sevilla
+Navas,Sevilla
+N'Zonzi,Sevilla
+Nolit,Sevilla
+Sarabia,Sevilla
+Piatti,Sevilla
+Piatti,Espanyol
+Fuego,Espanyol
+Jurado,Espanyol
+Leo,Espanyol
+Lopez,Espanyol
+Martin,Espanyol
+Moreno,Espanyol
+Nald,Espanyol
+Ada,Girona
+Alcala,Girona
+Bernard,Girona
+Garcia,Girona
+Granell,Girona
+Iraizoz,Girona
+Maffeo,Girona
+Pons,Girona
+Muniesa,Girona
+Port,Girona
+Torres,Girona
+Torres,Atl. Madrid
+Gabi,Atl. Madrid
+Gimenez,Atl. Madrid
+Griezmann,Atl. Madrid
+Hernandez,Atl. Madrid
+Juanfra,Atl. Madrid
+Kok,Atl. Madrid
+Niguez,Atl. Madrid
+Oblak,Atl. Madrid
+Savic,Atl. Madrid
+Alvarez,Celta Vigo
+Aspas,Celta Vigo
+Cabral,Celta Vigo
+Fontas,Celta Vigo
+Gomez,Celta Vigo
+Jonn,Celta Vigo
+Jozabe,Celta Vigo
+Radoja,Celta Vigo
+Mallo,Celta Vigo
+Sisto,Celta Vigo
+Zurutuza,Celta Vigo
+Zurutuza,Real Sociedad
+Elustondo,Real Sociedad
+Illarramendi,Real Sociedad
+Navas,Real Sociedad
+Odriozola,Real Sociedad
+Oyarzabal,Real Sociedad
+Prieto,Real Sociedad
+Rodrigues,Real Sociedad
+Rulli,Real Sociedad
+Willian,Real Sociedad
+Cancelo,Valencia
+Garay,Valencia
+Gaya,Valencia
+Medran,Valencia
+Neto,Valencia
+Parejo,Valencia
+Rodrig,Valencia
+Vezo,Valencia
+Soler,Valencia
+Vidal,Valencia
+Vitol,Valencia
+Vitol,Las Palmas
+Calleri,Las Palmas
+Castellano,Las Palmas
+Chichizola,Las Palmas
+Halilovic,Las Palmas
+Lemos,Las Palmas
+Navarro,Las Palmas
+Simon,Las Palmas
+Tan,Las Palmas
+Viera,Las Palmas
+Eraso,Leganes
+Gabrie,Leganes
+Guerrer,Leganes
+Mantovani,Leganes
+Munoz,Leganes
+Oma,Leganes
+Perez,Leganes
+Rico,Leganes
+Pichu,Leganes
+Szymanowski,Leganes
+Wakaso,Leganes
+Wakaso,Alaves
+Burgu,Alaves
+Ely,Alaves
+Garcia,Alaves
+Iba,Alaves
+Pacheco,Alaves
+Pedraza,Alaves
+Santos,Alaves
+Sobrino,Alaves
+Vigaray,Alaves
+Asensio,Real Madrid
+Bale,Real Madrid
+Marcelo,Real Madrid
+Zaza,Real Madrid
+Zaza,Valencia
+Kondogbia,Valencia
+Lato,Valencia
+Montoya,Valencia
+Murillo,Valencia
+Antunes,Getafe
+Arambarri,Getafe
+Bergara,Getafe
+Rico,Getafe
+Rico,Sevilla
+Escudero,Sevilla
+Gabriel,Sevilla
+Krohn-Dehli,Sevilla
+Pareja,Sevilla
+Pizarro,Sevilla
+Capa,Eibar
+Williams,Eibar
+Williams,Ath Bilbao
+Boveda,Ath Bilbao
+Cordoba,Ath Bilbao
+Saborit,Ath Bilbao
+Vesga,Ath Bilbao
+Hernan,Espanyol
+Zaldua,Espanyol
+Zaldua,Leganes
+Bigas,Las Palmas
+Gonzalez,Las Palmas
+Herna,Las Palmas
+Momo,Las Palmas
+Vrsaljko,Las Palmas
+Vrsaljko,Atl. Madrid
+Correa,Atl. Madrid
+Godin,Atl. Madrid
+Partey,Atl. Madrid
+Vietto,Atl. Madrid
+Rosales,Girona
+Rosales,Malaga
+Mula,Malaga
+Sidne,Levante
+Sidne,Dep. La Coruna
+Colak,Dep. La Coruna
+Alexi,Alaves
+Pina,Alaves
+Romero,Alaves
+Vidal,Alaves
+Vidal,Barcelona
+Iniesta,Barcelona
+Pique,Barcelona
+Umtiti,Barcelona
+Adan,Betis
+Durmisi,Betis
+Garcia,Betis
+Joaqui,Betis
+Guerrero,Betis
+Wass,Betis
+Wass,Celta Vigo
+Roncaglia,Celta Vigo
+Juanm,Real Sociedad
+Trigueros,Real Sociedad
+Bakambu,Villarreal
+Castillejo,Villarreal
+N'Diaye,Villarreal
+Semedo,Villarreal
+Kek,Malaga
+Ricca,Malaga
+Viera,Malaga
+Aythami,Las Palmas
+Michel,Las Palmas
+Tannane,Las Palmas
+Bacca,Villarreal
+Barbosa,Villarreal
+Tello,Villarreal
+Tello,Betis
+Amat,Betis
+Lobotka,Celta Vigo
+Vigaray,Celta Vigo
+Enz,Alaves
+Krkic,Alaves
+Torres,Alaves
+Aduriz,Ath Bilbao
+Herrerin,Ath Bilbao
+Lekue,Ath Bilbao
+Stuani,Ath Bilbao
+Stuani,Girona
+Adria,Dep. La Coruna
+Gama,Dep. La Coruna
+Zurutuza,Dep. La Coruna
+Januzaj,Real Sociedad
+Martinez,Real Sociedad
+Suarez,Barcelona
+Sanchez,Barcelona
+Sanchez,Espanyol
+Diop,Espanyol
+Hermoso,Espanyol
+Ben,Sevilla
+Carrico,Sevilla
+Ramis,Sevilla
+Enrich,Eibar
+Escalante,Eibar
+Gabriel,Valencia
+Pereira,Valencia
+Vietto,Valencia
+Filipe,Atl. Madrid
+Koke,Atl. Madrid
+Casilla,Real Madrid
+Hernandez,Real Madrid
+Luca,Real Madrid
+Llorente,Real Madrid
+Ton,Real Madrid
+Ton,Levante
+Rober,Levante
+Suarez,Leganes
+Darder,Espanyol
+Wass,Espanyol
+Canales,Real Sociedad
+Llorente,Real Sociedad
+Varane,Real Sociedad
+Varane,Real Madrid
+Mayoral,Real Madrid
+Aquilani,Las Palmas
+Williams,Las Palmas
+Iturraspe,Ath Bilbao
+Sabi,Ath Bilbao
+Juanp,Girona
+Mojica,Girona
+Sarabia,Girona
+Carole,Sevilla
+Montoya,Sevilla
+Medran,Alaves
+Munir,Alaves
+Trigueros,Alaves
+Rosales,Atl. Madrid
+Castro,Malaga
+Rolon,Malaga
+Schar,Betis
+Arribas,Dep. La Coruna
+Navarro,Dep. La Coruna
+Pantilimon,Dep. La Coruna
+Umtiti,Getafe
+Dembele,Barcelona
+Soler,Levante
+Mina,Valencia
+Beb,Eibar
+Galvez,Eibar
+Siovas,Eibar
+Siovas,Leganes
+Bustinza,Leganes
+Naranjo,Leganes
+Zubeldia,Levante
+Zubeldia,Real Sociedad
+Gorosabel,Real Sociedad
+Vela,Real Sociedad
+Hernandez,Celta Vigo
+Mendez,Celta Vigo
+Suarez,Celta Vigo
+Portillo,Getafe
+Cheryshev,Villarreal
+Mario,Villarreal
+Sanchez,Villarreal
+Ronaldo,Real Madrid
+Tello,Real Madrid
+Ruiz,Betis
+Sanabria,Betis
+Correa,Sevilla
+Vitol,Sevilla
+Aytham,Las Palmas
+Garcia,Las Palmas
+Perez,Dep. La Coruna
+Vigaray,Dep. La Coruna
+Duarte,Alaves
+Maripan,Alaves
+Savic,Ath Bilbao
+Gaitan,Atl. Madrid
+Beauvue,Leganes
+Brasanac,Leganes
+Stuani,Leganes
+Kayode,Girona
+Digne,Barcelona
+Paulinh,Barcelona
+Oliveira,Barcelona
+Junca,Eibar
+Guedes,Valencia
+Rolon,Valencia
+Jon,Malaga
+Rolan,Malaga
+Ton,Betis
+Zaza,Real Sociedad
+Herrera,Las Palmas
+Zaldua,Las Palmas
+Dos,Leganes
+Garcia,Leganes
+Wass,Eibar
+Blanco,Celta Vigo
+Rodriguez,Getafe
+Unal,Getafe
+Valverde,Espanyol
+Valverde,Dep. La Coruna
+Aday,Girona
+Douglas,Girona
+Olunga,Girona
+Vidal,Girona
+Williams,Malaga
+Varane,Alaves
+Ceballos,Real Madrid
+Carrasco,Atl. Madrid
+Vazquez,Atl. Madrid
+Vazquez,Sevilla
+Vietto,Leganes
+Samue,Levante
+Torres,Levante
+Soria,Sevilla
+Torres,Sevilla
+Torres,Malaga
+Suarez,Dep. La Coruna
+Stuani,Celta Vigo
+Hakimi,Real Madrid
+Sanchez,Real Madrid
+Roca,Espanyol
+Pena,Villarreal
+Lomban,Eibar
+Williams,Valencia
+Viera,Barcelona
+Tello,Real Sociedad
+Wass,Las Palmas
+Mor,Celta Vigo
+Zaza,Betis
+Penaranda,Malaga
+Zaldua,Malaga
+El,Leganes
+Ramalho,Girona
+Trigueros,Girona
+Arbilla,Eibar
+Valverde,Eibar
+Uzoho,Dep. La Coruna
+Umtiti,Atl. Madrid
+Gomes,Barcelona
+Zubeldia,Alaves
+Ronaldo,Getafe
+Vazquez,Ath Bilbao
+Navarro,Espanyol
+Postigo,Espanyol
+Doukoure,Levante
+Luna,Levante
+Mesa,Levante
+Albentosa,Dep. La Coruna
+Ramalho,Dep. La Coruna
+Bono,Girona
+Sanchez,Real Sociedad
+Rivera,Real Madrid
+Rivera,Eibar
+Amrabat,Leganes
+Gabriel,Leganes
+Williams,Leganes
+Savic,Celta Vigo
+Gameiro,Atl. Madrid
+Vitol,Villarreal
+Gomez,Las Palmas
+Rosales,Barcelona
+Prieto,Malaga
+Vazquez,Valencia
+Campbell,Betis
+Wakaso,Betis
+Suarez,Levante
+Raul,Las Palmas
+Samper,Las Palmas
+Remy,Las Palmas
+Valverde,Las Palmas
+Postigo,Eibar
+Tosca,Espanyol
+Wass,Malaga
+Varane,Girona
+Zubeldia,Getafe
+de,Real Sociedad
+Zaldua,Sevilla
+Umtiti,Ath Bilbao
+Trigueros,Atl. Madrid
+Soriano,Villarreal
+Dieguez,Alaves
+Zaza,Alaves
+Vitol,Real Madrid
+Bonera,Villarreal
+Chuc,Villarreal
+Rosales,Villarreal
+Rivera,Real Sociedad
+Williams,Celta Vigo
+Stuani,Levante
+Soria,Barcelona
+Sanchez,Alaves
+Savic,Dep. La Coruna
+Fernandez,Atl. Madrid
+Zaldua,Valencia
+Moran,Leganes
+Rodriguez,Betis
+Alejo,Eibar
+Ruiz,Eibar
+Trigueros,Ath Bilbao
+Unal,Las Palmas
+Moore,Levante
+Oier,Levante
+Garcia,Espanyol
+Rodrig,Espanyol
+Valverde,Malaga
+Valentin,Dep. La Coruna
+Varane,Atl. Madrid
+Geis,Sevilla
+Wass,Sevilla
+Umtiti,Leganes
+Vigaray,Getafe
+Zurutuza,Girona
+Suarez,Espanyol
+Vermaelen,Valencia
+Vermaelen,Barcelona
+Vazquez,Villarreal
+Vitol,Real Sociedad
+Williams,Dep. La Coruna
+Rico,Ath Bilbao
+Savic,Levante
+Boudebouz,Betis
+Navarro,Betis
+Timor,Betis
+Timor,Girona
+Vallejo,Real Madrid
+Rosales,Real Madrid
+Oliveira,Alaves
+Zaldua,Celta Vigo
+Gumbau,Leganes
+Wakaso,Girona
+Alexis,Alaves
+Tello,Las Palmas
+Sanchez,Eibar
+Gonzalez,Getafe
+Zaza,Getafe
+Trigueros,Leganes
+Marin,Villarreal
+Raba,Villarreal
+Etxeita,Ath Bilbao
+Varane,Ath Bilbao
+Banega,Sevilla
+Valverde,Sevilla
+Zurutuza,Atl. Madrid
+Wass,Barcelona
+Unal,Malaga
+Timor,Espanyol
+Asenjo,Villarreal
+Vermaelen,Villarreal
+El,Levante
+Vesga,Levante
+Vrsaljko,Betis
+Rosales,Real Sociedad
+Wass,Valencia
+Gil,Dep. La Coruna
+Tit,Dep. La Coruna
+Tit,Leganes
+Vazquez,Real Madrid
+Oliveira,Getafe
+Aguirregabiria,Alaves
+Viera,Alaves
+Varane,Leganes
+Kovacic,Real Madrid
+Tello,Malaga
+Sidne,Barcelona
+Sanchez,Las Palmas
+Duarte,Espanyol
+Granero,Espanyol
+Trigueros,Celta Vigo
+Suarez,Girona
+Mora,Getafe
+Pina,Atl. Madrid
+Vezo,Eibar
+Gil,Valencia
+Zurutuza,Ath Bilbao
+Unal,Sevilla
+Lukic,Levante
+Wass,Dep. La Coruna
+Trigueros,Valencia
+Vermaelen,Real Madrid
+Vrsaljko,Espanyol
+Williams,Betis
+Rolan,Alaves
+Miquel,Malaga
+Ontiveros,Malaga
+Timor,Eibar
+Soria,Real Sociedad
+Viera,Getafe
+Cabaco,Levante
+Zaldua,Levante
+En,Malaga
+Iturra,Malaga
+Sanchez,Malaga
+Varane,Celta Vigo
+Pina,Ath Bilbao
+Sidne,Villarreal
+Postigo,Barcelona
+Jason,Levante
+Zurutuza,Leganes
+Ruiz,Sevilla
+Jonathan,Las Palmas
+Penalba,Las Palmas
+Toledo,Las Palmas
+Oliveira,Las Palmas
+Timor,Valencia
+Costa,Atl. Madrid
+Suarez,Atl. Madrid
+Martinez,Getafe
+Zaldua,Betis
+Vermaelen,Real Sociedad
+Williams,Espanyol
+Guidetti,Alaves
+Laguardia,Alaves
+Rico,Alaves
+Boateng,Levante
+Cok,Levante
+Wass,Levante
+Vezo,Dep. La Coruna
+Maksimovic,Valencia
+Vrsaljko,Eibar
+Trigueros,Real Madrid
+Viera,Girona
+Galvez,Las Palmas
+Samperio,Las Palmas
+Rosales,Getafe
+Rosales,Eibar
+Vermaelen,Betis
+Wass,Real Sociedad
+Schar,Real Madrid
+One,Dep. La Coruna
+Zaldua,Alaves
+Vezo,Las Palmas
+Rodrigo,Valencia
+Rober,Villarreal
+Ramalho,Atl. Madrid
+Melendo,Espanyol
+Vazquez,Espanyol
+Williams,Getafe
+Tello,Celta Vigo
+Coutinh,Barcelona
+Wakaso,Barcelona
+Hernan,Alaves
+Shibasaki,Sevilla
+Viera,Atl. Madrid
+Sanchez,Leganes
+Zubeldia,Villarreal
+Tono,Real Sociedad
+Stuani,Malaga
+Coquelin,Valencia
+Varane,Valencia
+Oier,Dep. La Coruna
+Ramis,Ath Bilbao
+Diop,Eibar
+Orellana,Eibar
+Aguirregaray,Las Palmas
+Etebo,Las Palmas
+Gil,Las Palmas
+Samue,Las Palmas
+Samue,Malaga
+Ideye,Malaga
+Zaza,Atl. Madrid
+Williams,Girona
+Lopez,Ath Bilbao
+Martinez,Ath Bilbao
+Umtiti,Espanyol
+Zaldua,Getafe
+Varane,Levante
+Wass,Alaves
+Mazan,Celta Vigo
+Bartra,Betis
+Castro,Betis
+Moron,Betis
+Unal,Betis
+Sarabia,Eibar
+Layun,Sevilla
+Mesa,Sevilla
+Ramirez,Sevilla
+Schar,Real Sociedad
+Boveda,Dep. La Coruna
+Krohn-Dehli,Dep. La Coruna
+Adrian,Dep. La Coruna
+Ruiz,Dep. La Coruna
+Firpo,Betis
+Rober,Valencia
+Pazzini,Levante
+Sanchez,Celta Vigo
+Mina,Barcelona
+Ramalho,Sevilla
+Zurutuza,Real Madrid
+Ramis,Leganes
+Vrsaljko,Malaga
+Vitol,Atl. Madrid
+Fuego,Villarreal
+Martinez,Villarreal
+Torres,Villarreal
+Alvarez,Ath Bilbao
+Viera,Ath Bilbao
+Cabrera,Getafe
+Wass,Getafe
+Ronaldo,Betis
+Unal,Espanyol
+Williams,Atl. Madrid
+Agirretxe,Real Sociedad
+Postigo,Real Sociedad
+Lestienne,Malaga
+Vietto,Malaga
+Ruben,Alaves
+Umtiti,Eibar
+Vazquez,Las Palmas
+Zaldua,Girona
+Marti,Levante
+Ruiz,Levante
+Vrsaljko,Sevilla
+Zurutuza,Valencia
+Torres,Ath Bilbao
+Shibasaki,Villarreal
+Remy,Getafe
+Ramalho,Barcelona
+Lozano,Girona
+Tan,Leganes
+Torres,Real Madrid
+Pena,Celta Vigo
+Sanchez,Dep. La Coruna
+Leon,Eibar
+Unal,Eibar
+Rico,Atl. Madrid
+Zaza,Ath Bilbao
+Torres,Valencia
+Schar,Getafe
+Muntari,Dep. La Coruna
+Lacen,Malaga
+Sarabia,Malaga
+Guilherme,Sevilla
+Planas,Girona
+Wass,Girona
+Varane,Espanyol
+Oier,Alaves
+Vidal,Las Palmas
+Zurutuza,Betis
+Moreno,Real Sociedad
+Moya,Real Sociedad
+Tan,Celta Vigo
+Exposito,Las Palmas
+Ruiz,Valencia
+Jon,Real Sociedad
+Torres,Real Sociedad
+Vrsaljko,Barcelona
+Sanchez,Levante
+Suarez,Real Madrid
+Koval,Dep. La Coruna
+Pena,Dep. La Coruna
+Rosales,Leganes
+Williams,Sevilla
+Stuani,Villarreal
+Ruiz,Alaves
+Zaldua,Ath Bilbao
+Trigueros,Las Palmas
+Roncaglia,Atl. Madrid
+Zubeldia,Espanyol
+Garcia,Malaga
+Umtiti,Malaga
+Oier,Getafe
+Zaza,Sevilla
+Varane,Eibar
+Sidne,Girona
+Stuani,Real Madrid
+Torres,Celta Vigo
+Success,Malaga
+Vrsaljko,Villarreal
+Susaeta,Barcelona
+Vazquez,Leganes
+Sanchez,Betis
+Suarez,Real Sociedad
+Sobrino,Valencia
+Perez,Alaves
+Ramis,Levante
+Mercado,Sevilla
+Umtiti,Sevilla
+Varane,Las Palmas
+Wass,Ath Bilbao
+Boye,Celta Vigo
+Rober,Girona
+Flamini,Getafe
+Ruiz,Getafe
+Isaac,Atl. Madrid
+Sidne,Atl. Madrid
+Zurutuza,Eibar
+Soriano,Malaga
+Zaza,Leganes
+Torres,Espanyol
+Williams,Villarreal
+Vila,Valencia
+Vila,Espanyol
+Pardo,Real Sociedad
+Stuani,Real Sociedad
+Momo,Levante
+Ezekiel,Las Palmas
+Zaldua,Barcelona
+Gimenez,Betis
+Ramis,Betis
+Soria,Celta Vigo
+Suarez,Alaves
+Torres,Dep. La Coruna
+Vallejo,Malaga
+Vila,Getafe
+Sadiku,Atl. Madrid
+Sadiku,Levante
+Sobrino,Eibar
+Schar,Ath Bilbao
+Zurutuza,Las Palmas
+Wass,Leganes
+Vezo,Barcelona
+Trigueros,Sevilla
+Ruiz,Girona
+Raul,Betis
+Timor,Alaves
+Vrsaljko,Real Sociedad
+Williams,Real Madrid
+Pena,Espanyol
+Domenech,Valencia
+Suarez,Valencia
+Tit,Villarreal
+Vermaelen,Celta Vigo
+Soria,Dep. La Coruna
+Fernandez,Sevilla
+Postigo,Ath Bilbao
+Tello,Atl. Madrid
+Wakaso,Las Palmas
+Zurutuza,Malaga
+Sanchez,Girona
+Vezo,Celta Vigo
+Suarez,Eibar
+Olivera,Getafe
+Schar,Leganes
+Vallejo,Sevilla
+Cillessen,Barcelona
+Trigueros,Barcelona
+Lopez,Betis
+Success,Betis
+Borj,Dep. La Coruna
+Umtiti,Dep. La Coruna
+Yoel,Valencia
+Yoel,Eibar
+Sivera,Alaves
+Werner,Alaves
+Werner,Atl. Madrid
+Timor,Getafe
+Wass,Villarreal
+Zaldua,Real Madrid
+Williams,Real Sociedad
+Vazquez,Levante
+Champagne,Leganes
+Postigo,Leganes
+Varane,Barcelona
+Shibasaki,Las Palmas
+Barr,Getafe
+David,Getafe
+Redondo,Getafe
+Vila,Atl. Madrid
+Demirovic,Alaves
+Lopez,Alaves
+Vezo,Villarreal
+Schar,Celta Vigo
+Tello,Ath Bilbao
+Riesgo,Girona
+Riesgo,Eibar
+Zurutuza,Sevilla
+Vermaelen,Levante
+Success,Espanyol
+Wass,Real Madrid
+Trigueros,Dep. La Coruna
+Williams,Alaves
+Soria,Betis
+Savic,Getafe
+Zaza,Girona
+Samperio,Eibar
+Rico,Real Sociedad
+Zurutuza,Barcelona
+Gab,Atl. Madrid
+Pena,Atl. Madrid
+Vila,Ath Bilbao
+Valentin,Valencia
+Sadick,Dep. La Coruna
+Zidane,Villarreal
+Zidane,Real Madrid
+Robles,Malaga
+Shibasaki,Malaga
+Stuani,Las Palmas
+Wakaso,Sevilla
+Serantes,Leganes
+Ruiz,Leganes
+Sadiku,Celta Vigo
+Koke,Levante
+Rochina,Levante
