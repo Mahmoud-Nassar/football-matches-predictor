@@ -189,8 +189,8 @@ class DTClassifier:
         best_precision = precisionSum / generalizationFactor
         if maxDepthExperiment[1] > best_precision:
             best_precision = maxDepthExperiment[1]
-        elif testSizeExperiment[1] > best_precision:
+        if testSizeExperiment[1] > best_precision:
             best_precision = testSizeExperiment[1]
-        elif basic > best_precision:
+        if basic > best_precision:
             best_precision = basic
         return best_precision

@@ -2,6 +2,7 @@ from classes.League import processData
 from classification.decisionTree import DTClassifier as dt
 from classification.KNearestNeighbors import KNNClassifier as knn
 from classification.RandomForest import RFClassifier as rf
+from classification.SVM import SVMClassifier
 from scrapping.fetchFunctions import cleanLinks
 
 testSizeArray = [0.15, 0.2, 0.25, 0.3, 0.4]
@@ -75,3 +76,27 @@ if __name__ == '__main__':
     print("        -maximum depth experiment: the best max depth is {}"
           ",and it`s resulted precision is: {:.2f}%"
           .format(int(er8[0]), er8[1]))
+
+    er9 = rf.experimentOnNEstimators([5, 20, 30, 41, 52, 63])
+    print("        -number of estimators experiment: the best number estimators is {}"
+          ",and it`s resulted \n        precision is: {:.2f}%"
+          .format(int(er9[0]), er9[1]))
+    ##################################################################
+    #######################   SVM   #####################################
+    print("SVM: ")
+
+    er10 = SVMClassifier.svmBasicClassification()
+    print("        -basic classification precision: {:.2f}%"
+          .format(er10))
+
+    er11 = SVMClassifier.experimentOnTestSize(testSizeArray)
+    print("        -test size experiment: best test size is {}% of the data "
+          ",and it`s resulted precision is: {:.2f}%"
+          .format(int(er11[0] * 100), er11[1]))
+
+    # er12 = SVMClassifier.([5, 20, 30, 41, 52, 63])
+    # print("        -maximum depth experiment: the best max depth is {}"
+    #       ",and it`s resulted precision is: {:.2f}%"
+    #       .format(int(er12[0]), er12[1]))
+
+

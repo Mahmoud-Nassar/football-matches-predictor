@@ -3,8 +3,8 @@ import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split, KFold
 from helperFunctionsAndVariables.globalVariables import \
-    csvProcessedDataReadPath, attributes, classificationField,\
-    generalizationFactor, kFoldNumSplits,weightMap
+    csvProcessedDataReadPath, attributes, classificationField, \
+    generalizationFactor, kFoldNumSplits, weightMap
 from helperFunctionsAndVariables.helperFunctions import create_graph
 
 
@@ -73,7 +73,8 @@ class RFClassifier:
             precisions.append(precision)
         maxIndex = np.argmax(precisions)
         create_graph(sizes, precisions, "test size (percentage of the data set)",
-                     "precision in %", "results\\random forest\\random forest test size experiment.jpg")
+                     "precision in %",
+                     "results\\random forest\\random forest test size experiment.jpg")
         return [sizes[maxIndex], precisions[maxIndex]]
 
     @staticmethod
@@ -104,6 +105,34 @@ class RFClassifier:
             precision = precisionSum / kFoldNumSplits
             precisions.append(precision)
         maxIndex = np.argmax(precisions)
-        create_graph(depths, precisions, " tree maximum depth",
-                     "precision in %", "results\\decision tree\\decision tree max depth experiment.jpg")
+        create_graph(depths, precisions, "tree maximum depth",
+                     "precision in %",
+                     "results\\random forest\\random forest max depth experiment.jpg")
         return [depths[maxIndex], precisions[maxIndex]]
+
+    @staticmethod
+    def experimentOnNEstimators(nEstimatorsArray):
+        kf = KFold(n_splits=kFoldNumSplits, shuffle=True, random_state=15161098)
+        precisions = []
+        df = pd.read_csv(csvProcessedDataReadPath + 'processedGames.csv')
+        X = df[attributes]
+        y = df[classificationField]
+        y = np.ravel(y)
+        for nEstimators in nEstimatorsArray:
+            precisionSum = 0
+            for train_indexes, test_indexes in kf.split(X):
+                classifier = RFClassifier(n_estimators=nEstimators)
+                classifier.X_train = X.iloc[train_indexes]
+                classifier.y_train = y[train_indexes]
+                classifier.X_test = X.iloc[test_indexes]
+                classifier.y_test = y[test_indexes]
+                classifier.train()
+                classifier.predict()
+                precisionSum += classifier.getPrecision()
+            precision = precisionSum / kFoldNumSplits
+            precisions.append(precision)
+        maxIndex = np.argmax(precisions)
+        create_graph(nEstimatorsArray, precisions, "number of estimators",
+                     "precision in %",
+                     "results\\random forest\\random forest estimators number experiment.jpg")
+        return [nEstimatorsArray[maxIndex], precisions[maxIndex]]
