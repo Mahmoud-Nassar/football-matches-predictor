@@ -5,7 +5,8 @@ from sklearn.model_selection import train_test_split, KFold
 from helperFunctionsAndVariables.globalVariables import \
     csvProcessedDataReadPath, attributes, classificationField, \
     generalizationFactor, kFoldNumSplits, weightMap
-from helperFunctionsAndVariables.helperFunctions import create_graph
+from helperFunctionsAndVariables.helperFunctions import \
+    createGraph, createMultipleFunctionGraph
 
 
 class DTClassifier:
@@ -88,7 +89,7 @@ class DTClassifier:
             precision = precisionSum / generalizationFactor
             precisions.append(precision)
         maxIndex = np.argmax(precisions)
-        create_graph(sizes, precisions, "test size (percentage of the data set)",
+        createGraph(sizes, precisions, "test size (percentage of the data set)",
                      "precision in %",
                      "results\\decision tree\\"
                      "decision tree test size experiment.jpg", "Decision Tree")
@@ -121,7 +122,7 @@ class DTClassifier:
             precision = precisionSum / kFoldNumSplits
             precisions.append(precision)
         maxIndex = np.argmax(precisions)
-        create_graph(depths, precisions, " tree maximum depth", "precision in %",
+        createGraph(depths, precisions, " tree maximum depth", "precision in %",
                      "results\\decision tree\\decision tree max "
                      "depth experiment.jpg", "Decision Tree")
         return [depths[maxIndex], precisions[maxIndex]]
@@ -155,9 +156,16 @@ class DTClassifier:
                 precision = precisionSum / kFoldNumSplits
                 precisions[i, j] = precision
         maxIndex = np.unravel_index(np.argmax(precisions), precisions.shape)
-        # create_graph(depths, precisions, " tree maximum depth",
-        #              "precision in %", "results\\decision tree\\decision tree max depth experiment.jpg")
-        return [depths[maxIndex[0]], minSamplesLeafArray[maxIndex[1]], precisions[maxIndex]]
+        createMultipleFunctionGraph(depths, precisions, "min samples\nfor leaf",
+                                    [str(i) for i in minSamplesLeafArray],
+                                    " tree maximum depth",
+                                    "precision in %",
+                                    "results\\decision tree\\decision tree maximum "
+                                    "depth and min samples per leaf experiment.jpg",
+                                    "decision tree maximum depth and min samples "
+                                    "per leaf experiment")
+        return [depths[maxIndex[0]], minSamplesLeafArray[maxIndex[1]],
+                precisions[maxIndex]]
 
     @staticmethod
     def getBestPrecision(basic, maxDepthExperiment, testSizeExperiment):

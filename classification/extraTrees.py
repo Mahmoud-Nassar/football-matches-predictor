@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split, KFold
 from helperFunctionsAndVariables.globalVariables import \
     csvProcessedDataReadPath, attributes, classificationField, \
     generalizationFactor, kFoldNumSplits, weightMap
-from helperFunctionsAndVariables.helperFunctions import create_graph
+from helperFunctionsAndVariables.helperFunctions import createGraph
 
 
 class ETClassifier:
@@ -75,7 +75,7 @@ class ETClassifier:
             precision = precisionSum / generalizationFactor
             precisions.append(precision)
         maxIndex = np.argmax(precisions)
-        create_graph(sizes, precisions, "test size (percentage of the data set)",
+        createGraph(sizes, precisions, "test size (percentage of the data set)",
                      "precision in %", "results\\extra trees\\extra trees"
                                        " test size experiment.jpg", "Extra Trees")
         return [sizes[maxIndex], precisions[maxIndex]]

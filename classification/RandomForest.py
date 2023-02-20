@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split, KFold
 from helperFunctionsAndVariables.globalVariables import \
     csvProcessedDataReadPath, attributes, classificationField, \
     generalizationFactor, kFoldNumSplits, weightMap
-from helperFunctionsAndVariables.helperFunctions import create_graph
+from helperFunctionsAndVariables.helperFunctions import createGraph
 
 
 class RFClassifier:
@@ -72,7 +72,7 @@ class RFClassifier:
             precision = precisionSum / generalizationFactor
             precisions.append(precision)
         maxIndex = np.argmax(precisions)
-        create_graph(sizes, precisions, "test size (percentage of the data set)",
+        createGraph(sizes, precisions, "test size (percentage of the data set)",
                      "precision in %",
                      "results\\random forest\\random forest test size "
                      "experiment.jpg", "Random Forest")
@@ -106,7 +106,7 @@ class RFClassifier:
             precision = precisionSum / kFoldNumSplits
             precisions.append(precision)
         maxIndex = np.argmax(precisions)
-        create_graph(depths, precisions, "tree maximum depth",
+        createGraph(depths, precisions, "tree maximum depth",
                      "precision in %",
                      "results\\random forest\\random forest max depth "
                      "experiment.jpg", "Random Forest")
@@ -134,7 +134,7 @@ class RFClassifier:
             precision = precisionSum / kFoldNumSplits
             precisions.append(precision)
         maxIndex = np.argmax(precisions)
-        create_graph(nEstimatorsArray, precisions, "number of estimators",
+        createGraph(nEstimatorsArray, precisions, "number of estimators",
                      "precision in %",
                      "results\\random forest\\random forest estimators"
                      " number experiment.jpg", "Random Forest")

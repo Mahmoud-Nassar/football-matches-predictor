@@ -5,7 +5,7 @@ from sklearn.svm import SVC
 from helperFunctionsAndVariables.globalVariables import \
     csvProcessedDataReadPath, attributes, classificationField, \
     generalizationFactor, kFoldNumSplits, weightMap
-from helperFunctionsAndVariables.helperFunctions import create_graph
+from helperFunctionsAndVariables.helperFunctions import createGraph
 
 
 class SVMClassifier:
@@ -66,7 +66,7 @@ class SVMClassifier:
             precision = precisionSum / generalizationFactor
             precisions.append(precision)
         maxIndex = np.argmax(precisions)
-        create_graph(sizes, precisions, "test size (percentage of the data set)",
+        createGraph(sizes, precisions, "test size (percentage of the data set)",
                      "precision in %", "results\\svm\\"
                                        "svm test size experiment.jpg", "SVM")
         return [sizes[maxIndex], precisions[maxIndex]]
