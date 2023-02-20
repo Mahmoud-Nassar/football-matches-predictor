@@ -74,7 +74,8 @@ class RFClassifier:
         maxIndex = np.argmax(precisions)
         create_graph(sizes, precisions, "test size (percentage of the data set)",
                      "precision in %",
-                     "results\\random forest\\random forest test size experiment.jpg")
+                     "results\\random forest\\random forest test size "
+                     "experiment.jpg", "Random Forest")
         return [sizes[maxIndex], precisions[maxIndex]]
 
     @staticmethod
@@ -107,7 +108,8 @@ class RFClassifier:
         maxIndex = np.argmax(precisions)
         create_graph(depths, precisions, "tree maximum depth",
                      "precision in %",
-                     "results\\random forest\\random forest max depth experiment.jpg")
+                     "results\\random forest\\random forest max depth "
+                     "experiment.jpg", "Random Forest")
         return [depths[maxIndex], precisions[maxIndex]]
 
     @staticmethod
@@ -134,5 +136,6 @@ class RFClassifier:
         maxIndex = np.argmax(precisions)
         create_graph(nEstimatorsArray, precisions, "number of estimators",
                      "precision in %",
-                     "results\\random forest\\random forest estimators number experiment.jpg")
+                     "results\\random forest\\random forest estimators"
+                     " number experiment.jpg", "Random Forest")
         return [nEstimatorsArray[maxIndex], precisions[maxIndex]]

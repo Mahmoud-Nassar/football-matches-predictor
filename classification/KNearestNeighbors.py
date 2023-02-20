@@ -72,7 +72,8 @@ class KNNClassifier:
             precisions.append(precision)
         maxIndex = np.argmax(precisions)
         create_graph(sizes, precisions, "test size (percentage of the data set)",
-                     "precision in %", "results\\KNN\\KNN test size experiment.jpg")
+                     "precision in %", "results\\KNN\\"
+                                       "KNN test size experiment.jpg", "KNN")
         return [sizes[maxIndex], precisions[maxIndex]]
 
     @staticmethod
@@ -89,7 +90,8 @@ class KNNClassifier:
             precisions.append(precision)
         maxIndex = np.argmax(precisions)
         create_graph(neighbors, precisions, "number of neighbors",
-                     "precision in %", "results\\KNN\\KNN number of neighbors experiment.jpg")
+                     "precision in %", "results\\KNN\\KNN number of neighbors "
+                                       "experiment.jpg", "KNN")
         return [neighbors[maxIndex], precisions[maxIndex]]
 
     @staticmethod

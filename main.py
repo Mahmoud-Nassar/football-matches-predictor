@@ -36,6 +36,14 @@ if __name__ == '__main__':
           ",and it`s resulted precision is: {:.2f}%"
           .format(int(er2[0]), er2[1]))
 
+    er22 = dt.experimentOnDepthAndMinSamplesLeaf(
+        [5, 10, 20, 30, 41, 52, 63], [7, 13, 15, 23, 31, 37, 47, 59, 85])
+    print("        -maximum depth and min leaf samples experiment: "
+          "the best max depth and "
+          "minimum leaf samples\n          is ({},{})"
+          ",and it`s resulted precision is: {:.2f}%"
+          .format(int(er22[0]), er22[1], er22[2]))
+
     print("    -best precision considering all experiments results: {:.2f}%"
           .format(dt.getBestPrecision(er0, er2, er1)))
     ##################################################################
@@ -98,5 +106,3 @@ if __name__ == '__main__':
     # print("        -maximum depth experiment: the best max depth is {}"
     #       ",and it`s resulted precision is: {:.2f}%"
     #       .format(int(er12[0]), er12[1]))
-
-
