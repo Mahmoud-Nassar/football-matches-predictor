@@ -175,6 +175,7 @@ class DTClassifier:
         return [depths[maxIndex[1]], minSamplesLeafArray[maxIndex[0]],
                 precisions[maxIndex]]
 
+    """ TODO: may need to update this function """
     @staticmethod
     def getBestPrecision(basic, maxDepthExperiment, testSizeExperiment):
         precisionSum = 0

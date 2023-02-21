@@ -3,6 +3,7 @@ from classification.decisionTree import DTClassifier as dt
 from classification.KNearestNeighbors import KNNClassifier as knn
 from classification.RandomForest import RFClassifier as rf
 from classification.SVM import SVMClassifier
+from classification.extraTrees import ETClassifier as et
 from scrapping.fetchFunctions import cleanLinks
 
 testSizeArray = [0.15, 0.2, 0.25, 0.3, 0.4]
@@ -106,3 +107,23 @@ if __name__ == '__main__':
     # print("        -maximum depth experiment: the best max depth is {}"
     #       ",and it`s resulted precision is: {:.2f}%"
     #       .format(int(er12[0]), er12[1]))
+    ##################################################################
+    #######################   Extra Trees   #####################################
+    print("Extra Trees: ")
+
+    er13 = et.extraTreesBasicClassification()
+    print("        -basic classification precision: {:.2f}%"
+          .format(er13))
+
+    er14 = et.experimentOnTestSize(testSizeArray)
+    print("        -test size experiment: best test size is {}% of the data "
+          ",and it`s resulted precision is: {:.2f}%"
+          .format(int(er14[0] * 100), er14[1]))
+
+    er15 = et.experimentOnDepthAndNEstimators(
+        [5, 10, 20, 30, 41, 52, 63], [7, 13, 15, 23, 41])
+    print("        -maximum depth and number of estimators experiment: "
+          "the best max depth and "
+          "number of estimators\n          is ({},{})"
+          ",and it`s resulted precision is: {:.2f}%"
+          .format(int(er15[0]), er15[1], er15[2]))

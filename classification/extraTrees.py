@@ -5,8 +5,8 @@ from sklearn.model_selection import train_test_split, KFold
 from helperFunctionsAndVariables.globalVariables import \
     csvProcessedDataReadPath, attributes, classificationField, \
     generalizationFactor, kFoldNumSplits, weightMap
-from helperFunctionsAndVariables.helperFunctions import createGraph,\
-    createMultipleFunctionGraph
+from helperFunctionsAndVariables.helperFunctions import createGraph, \
+    createMultipleFunctionGraph, createMultipleFunctionTable
 
 
 class ETClassifier:
@@ -14,6 +14,7 @@ class ETClassifier:
         df = pd.read_csv(csvProcessedDataReadPath + 'processedGames.csv')
         self.X = df[attributes]
         self.y = df[classificationField]
+        self.y = np.ravel(self.y)
         self.X_train, self.X_test, self.y_train, self.y_test = \
             train_test_split(self.X, self.y, test_size=testSize)
         self.Classifier = \
@@ -30,16 +31,7 @@ class ETClassifier:
         self.y_pred = self.y_pred.reshape(-1, 1)
 
     def getPrecision(self):
-        i = 0
-        wrong = 0
-        for (index, row) in self.y_test.iterrows():
-            predValue = int(self.y_pred[i])
-            realValue = int(row.values)
-            if predValue != realValue:
-                wrong += 1
-            i += 1
-        precision = (len(self.y_pred) - wrong) / len(self.y_pred)
-        return precision * 100
+        return (self.Classifier.score(self.X_test, self.y_test)) * 100
 
     def analyze(self):
         i = 0
@@ -95,15 +87,16 @@ class ETClassifier:
         df = pd.read_csv(csvProcessedDataReadPath + 'processedGames.csv')
         X = df[attributes]
         y = df[classificationField]
+        y = np.ravel(y)
         for i, nEstimators in enumerate(numberEstimatorsArray):
             for j, depth in enumerate(depths):
                 precisionSum = 0
                 for train_indexes, test_indexes in kf.split(X):
                     classifier = ETClassifier(n_estimators=nEstimators, maxDepth=depth)
                     classifier.X_train = X.iloc[train_indexes]
-                    classifier.y_train = y.iloc[train_indexes]
+                    classifier.y_train = y[train_indexes]
                     classifier.X_test = X.iloc[test_indexes]
-                    classifier.y_test = y.iloc[test_indexes]
+                    classifier.y_test = y[test_indexes]
                     classifier.train()
                     classifier.predict()
                     precisionSum += classifier.getPrecision()
@@ -115,8 +108,16 @@ class ETClassifier:
                                     " tree maximum depth",
                                     "precision in %",
                                     "results\\extra trees\\extra trees maximum "
-                                    "depth and estimators number experiment.jpg",
+                                    "depth and estimators number experiment",
                                     "extra trees maximum depth and estimators"
                                     " number experiment")
-        return [depths[maxIndex[0]], numberEstimatorsArray[maxIndex[1]],
+        createMultipleFunctionTable(depths, precisions, "number of\nestimators",
+                                    [str(i) for i in numberEstimatorsArray],
+                                    " tree maximum depth",
+                                    "precision in %",
+                                    "results\\extra trees\\extra trees maximum "
+                                    "depth and estimators number experiment",
+                                    "extra trees maximum depth and estimators"
+                                    " number experiment")
+        return [depths[maxIndex[1]], numberEstimatorsArray[maxIndex[0]],
                 precisions[maxIndex]]

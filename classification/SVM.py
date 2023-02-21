@@ -70,3 +70,5 @@ class SVMClassifier:
                      "precision in %", "results\\svm\\"
                                        "svm test size experiment.jpg", "SVM")
         return [sizes[maxIndex], precisions[maxIndex]]
+
+    """ TODO : add an experiment on 2 hypermarkets cross-validation"""
