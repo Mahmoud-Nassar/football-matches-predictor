@@ -4,7 +4,7 @@ csvGamesPath = "dataSet\season_17_18\games\\games.csv"
 csvWritePath = "dataSet\\"
 csvProcessedDataReadPath = "dataSet\\"
 generalizationFactor = 1
-kFoldNumSplits = 5
+kFoldNumSplits = 10
 weightMap = {1: 5, 2: 1}
 
 attributes = [

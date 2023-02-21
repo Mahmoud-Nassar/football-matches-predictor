@@ -6,7 +6,7 @@ from helperFunctionsAndVariables.globalVariables import \
     csvProcessedDataReadPath, attributes, classificationField, \
     generalizationFactor, kFoldNumSplits, weightMap
 from helperFunctionsAndVariables.helperFunctions import \
-    createGraph, createMultipleFunctionGraph
+    createGraph, createMultipleFunctionGraph,createMultipleFunctionTable
 
 
 class DTClassifier:
@@ -90,9 +90,9 @@ class DTClassifier:
             precisions.append(precision)
         maxIndex = np.argmax(precisions)
         createGraph(sizes, precisions, "test size (percentage of the data set)",
-                     "precision in %",
-                     "results\\decision tree\\"
-                     "decision tree test size experiment.jpg", "Decision Tree")
+                    "precision in %",
+                    "results\\decision tree\\"
+                    "decision tree test size experiment.jpg", "Decision Tree")
         return [sizes[maxIndex], precisions[maxIndex]]
 
     @staticmethod
@@ -123,8 +123,8 @@ class DTClassifier:
             precisions.append(precision)
         maxIndex = np.argmax(precisions)
         createGraph(depths, precisions, " tree maximum depth", "precision in %",
-                     "results\\decision tree\\decision tree max "
-                     "depth experiment.jpg", "Decision Tree")
+                    "results\\decision tree\\decision tree max "
+                    "depth experiment.jpg", "Decision Tree")
         return [depths[maxIndex], precisions[maxIndex]]
 
     @staticmethod
@@ -161,10 +161,18 @@ class DTClassifier:
                                     " tree maximum depth",
                                     "precision in %",
                                     "results\\decision tree\\decision tree maximum "
-                                    "depth and min samples per leaf experiment.jpg",
+                                    "depth and min samples per leaf experiment",
                                     "decision tree maximum depth and min samples "
                                     "per leaf experiment")
-        return [depths[maxIndex[0]], minSamplesLeafArray[maxIndex[1]],
+        createMultipleFunctionTable(depths, precisions, "min samples\nfor leaf",
+                                    [str(i) for i in minSamplesLeafArray],
+                                    " tree maximum depth",
+                                    "precision in %",
+                                    "results\\decision tree\\decision tree maximum "
+                                    "depth and min samples per leaf experiment",
+                                    "decision tree maximum depth and min samples "
+                                    "per leaf experiment")
+        return [depths[maxIndex[1]], minSamplesLeafArray[maxIndex[0]],
                 precisions[maxIndex]]
 
     @staticmethod

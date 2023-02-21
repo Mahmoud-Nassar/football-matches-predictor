@@ -37,7 +37,7 @@ if __name__ == '__main__':
           .format(int(er2[0]), er2[1]))
 
     er22 = dt.experimentOnDepthAndMinSamplesLeaf(
-        [5, 10, 20, 30, 41, 52, 63], [7, 13, 15, 23, 31, 37, 47, 59, 85])
+        [5, 10, 20, 30, 41, 52, 63], [7, 13, 15, 23, 41])
     print("        -maximum depth and min leaf samples experiment: "
           "the best max depth and "
           "minimum leaf samples\n          is ({},{})"

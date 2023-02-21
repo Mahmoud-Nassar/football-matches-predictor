@@ -1,4 +1,6 @@
 import matplotlib.pyplot as plt
+import pandas as pd
+import math
 
 
 def createGraph(xValues, yValues, xLabel, yLabel, savePath, title):
@@ -29,6 +31,7 @@ def createMultipleFunctionGraph(xValues, linesArray, linesHeadLines,
 
     for i, line in enumerate(linesArray):
         ax.plot(xValues, line, label=linesNames[i])
+        ax.scatter(xValues, line, color=ax.get_lines()[-1].get_color())
 
     ax.set_title(title)
     ax.set_xlabel(xLabel)
@@ -38,4 +41,34 @@ def createMultipleFunctionGraph(xValues, linesArray, linesHeadLines,
     ax.legend(bbox_to_anchor=(1.125, 1.125), loc='upper right',
               title=linesHeadLines, fontsize="small")
 
-    plt.savefig(savePath)
+    plt.savefig(savePath + ".jpg")
+
+
+def createMultipleFunctionTable(xValues, linesArray, linesHeadLines,
+                                linesNames, xLabel, yLabel, savePath, title):
+    linesHeadLinesEdited = linesHeadLines.replace("\n", " ")
+    linesRightShift = "\t"
+    middleLineOffset = ""
+    for i in range(0, len(linesHeadLinesEdited) % 17):
+        middleLineOffset += " "
+    middleLineOffset += "\t"
+    for i in range(0, math.floor(len(linesHeadLinesEdited))):
+        if i % 17 == 0:
+            linesRightShift += "\t"
+    table = linesRightShift + "\t" + xLabel + "\n" + linesRightShift
+    for xValue in xValues:
+        table += "\t  " + str(xValue)
+    table += "\n" + linesRightShift
+    middle = round(len(linesArray) / 2)
+    for i, line in enumerate(linesArray):
+        table += "\n"
+        if i == middle:
+            table += linesHeadLinesEdited + middleLineOffset
+        else:
+            table += linesRightShift
+        table += linesNames[i]
+        table += "\t"
+        for line_value in line:
+            table += str(round(line_value, 2)) + "\t"
+    with open(savePath + ".txt", mode="w") as file:
+        file.write(table)
