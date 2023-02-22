@@ -5,7 +5,7 @@ csvWritePath = "dataSet\\"
 csvProcessedDataReadPath = "dataSet\\"
 generalizationFactor = 1
 kFoldNumSplits = 10
-weightMap = {1: 5, 2: 1}
+weightMap = {1: 1, 2: 1}
 
 attributes = [
     "team1 history points", "team2 history points",
@@ -13,8 +13,8 @@ attributes = [
     "audience",
     "team1 table position", "team2 table position",
     "team1 league titles", "team2 league titles",
-    # "team1 champions league titles", "team2 champions league titles",
-    # "team1 europa league titles", "team2 europa league titles",
+    "team1 champions league titles", "team2 champions league titles",
+    "team1 europa league titles", "team2 europa league titles",
     "team1 Rank", "team2 Rank"
 ]
 classificationField = ["result"]
