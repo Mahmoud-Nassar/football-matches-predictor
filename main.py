@@ -105,13 +105,13 @@ if __name__ == '__main__':
 
     # , 20, 30, 50, 70
     # , "poly", "rbf", "sigmoid"
-    er12 = SVMClassifier.experimentOnCAndKernel([0.1, 0.2, 20, 30, 50, 70],
+    er12 = SVMClassifier.experimentOnCAndKernel([0.1, 0.2, 10, 20 ],
                                                 ["linear", "poly", "rbf", "sigmoid"])
     print("        -C value and kernels experiment: "
           "the best C value and "
           "kernel \n          is ({},{})"
           ",and it`s resulted precision is: {:.2f}%"
-          .format(int(er22[0]), er22[1], int(er22[2])))
+          .format(int(er12[0]), er12[1], int(er12[2])))
     ##################################################################
     #######################   Extra Trees   #####################################
     print("Extra Trees: ")
