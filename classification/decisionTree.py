@@ -6,7 +6,7 @@ from helperFunctionsAndVariables.globalVariables import \
     csvProcessedDataReadPath, attributes, classificationField, \
     generalizationFactor, kFoldNumSplits, weightMap
 from helperFunctionsAndVariables.helperFunctions import \
-    createGraph, createMultipleFunctionGraph,createMultipleFunctionTable
+    createGraph, createMultipleFunctionGraph, createMultipleFunctionTable
 
 
 class DTClassifier:
@@ -176,6 +176,7 @@ class DTClassifier:
                 precisions[maxIndex]]
 
     """ TODO: may need to update this function """
+
     @staticmethod
     def getBestPrecision(basic, maxDepthExperiment, testSizeExperiment):
         precisionSum = 0

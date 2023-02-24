@@ -9,7 +9,6 @@ from helperFunctionsAndVariables.globalVariables import \
 class League:
     def __init__(self, csvTeamsPath, csvGamesPath, csvWritePath):
         self.teams = []
-        self.games = []
         self.insertTeamsInfo(csvTeamsPath)
         self.RunLeagueAndProcessData(csvGamesPath, csvWritePath)
 
@@ -101,7 +100,7 @@ class League:
             extract_numeric_value(gameLine[32]) / 1000,
             self.getTeamPositionById(team1.teamId), self.getTeamPositionById(team2.teamId),
             team1.laLigaTitles, team2.laLigaTitles,
-            team1.championsLeagueTitles,team2.championsLeagueTitles,
+            team1.championsLeagueTitles, team2.championsLeagueTitles,
             team1.europaLeagueTitles, team2.europaLeagueTitles,
             team1.rank, team2.rank,
             getResult(gameLine)
