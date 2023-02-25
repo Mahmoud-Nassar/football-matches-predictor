@@ -1,12 +1,26 @@
+import pandas as pd
+import csv
+
 from classes.League import processData
 from classification.decisionTree import DTClassifier as dt
 from classification.KNearestNeighbors import KNNClassifier as knn
 from classification.RandomForest import RFClassifier as rf
-from classification.SVM import SVMClassifier
+from classification.SVM import SVMClassifier as svm
 from classification.extraTrees import ETClassifier as et
+from helperFunctionsAndVariables.globalVariables import attributes, \
+    classificationField, csvExamplesToClassifyPath, csvProcessedDataReadPath
 from scrapping.fetchFunctions import cleanLinks
 
 testSizeArray = [0.15, 0.2, 0.25, 0.3, 0.4]
+
+
+def getMaxPrecision(precisionsArray):
+    maxPrecision = 0
+    for precisions in precisionsArray:
+        if precisions > maxPrecision:
+            maxPrecision = precisions
+    return maxPrecision
+
 
 if __name__ == '__main__':
     # cleanLinks()
@@ -45,8 +59,8 @@ if __name__ == '__main__':
           ",and it`s resulted precision is: {:.2f}%"
           .format(int(er22[0]), er22[1], er22[2]))
 
-    print("    -best precision considering all experiments results: {:.2f}%"
-          .format(dt.getBestPrecision(er0, er2, er1)))
+    # print("    -best precision considering all experiments results: {:.2f}%"
+    #       .format(dt.getBestPrecision(er0, er2, er1)))
     ##################################################################
     ####################### KNN  #####################################
     print("KNN: ")
@@ -66,8 +80,8 @@ if __name__ == '__main__':
           ",and it`s \n         resulted precision is: {:.2f}%"
           .format(int(er4[0]), er4[1]))
 
-    print("    -best precision considering all experiments results: {:.2f}%"
-          .format(knn.getBestPrecision(er5, er4, er3)))
+    # print("    -best precision considering all experiments results: {:.2f}%"
+    #       .format(knn.getBestPrecision(er5, er4, er3)))
     ##################################################################
     ####################### Random Forest  #####################################
     print("Random Forest: ")
@@ -94,24 +108,26 @@ if __name__ == '__main__':
     #######################   SVM   #####################################
     print("SVM: ")
 
-    er10 = SVMClassifier.svmBasicClassification()
+    er10 = svm.svmBasicClassification()
     print("        -basic classification precision: {:.2f}%"
           .format(er10))
 
-    er11 = SVMClassifier.experimentOnTestSize(testSizeArray)
+    er11 = svm.experimentOnTestSize(testSizeArray)
     print("        -test size experiment: best test size is {}% of the data "
           ",and it`s resulted precision is: {:.2f}%"
           .format(int(er11[0] * 100), er11[1]))
 
-    # # , 20, 30, 50, 70
-    # # , "poly", "rbf", "sigmoid"
-    # er12 = SVMClassifier.experimentOnCAndKernel([0.1, 0.2, 10, 20 ],
-    #                                             ["linear", "poly", "rbf", "sigmoid"])
-    # print("        -C value and kernels experiment: "
-    #       "the best C value and "
-    #       "kernel \n          is ({},{})"
-    #       ",and it`s resulted precision is: {:.2f}%"
-    #       .format(int(er12[0]), er12[1], int(er12[2])))
+    """"
+    [0.1, 0.2, 10, 20],
+    ["linear", "poly", "rbf", "sigmoid"]
+    """
+    er12 = svm.experimentOnCAndKernel([0.1],
+                                      ["linear"])
+    print("        -C value and kernels experiment: "
+          "the best C value and "
+          "kernel \n          is ({},{})"
+          ",and it`s resulted precision is: {:.2f}%"
+          .format(int(er12[0]), er12[1], int(er12[2])))
     ##################################################################
     #######################   Extra Trees   #####################################
     print("Extra Trees: ")
@@ -132,3 +148,55 @@ if __name__ == '__main__':
           "number of estimators\n          is ({},{})"
           ",and it`s resulted precision is: {:.2f}%"
           .format(int(er15[0]), er15[1], er15[2]))
+
+    maxPrecision = getMaxPrecision([er0, er2[1], er22[2],
+                                    er5, er4[1],
+                                    er6, er8[1], er9[1],
+                                    er10, er12[2],
+                                    er13, er15[2]])
+    bestClassifier = None
+
+    if maxPrecision == er0:
+        bestClassifier = dt()
+    if maxPrecision == er2[1]:
+        bestClassifier = dt(maxDepth=er2[0])
+    if maxPrecision == er22[2]:
+        bestClassifier = dt(maxDepth=er22[0], minSamplesLeaf=er22[1])
+
+    if maxPrecision == er5:
+        bestClassifier = knn()
+    if maxPrecision == er4[1]:
+        bestClassifier = knn(n_neighbors=er4[0])
+
+    if maxPrecision == er6:
+        bestClassifier = rf()
+    if maxPrecision == er8[1]:
+        bestClassifier = rf(maxDepth=er8[0])
+    if maxPrecision == er9[1]:
+        bestClassifier = rf(n_estimators=er9[0])
+
+    if maxPrecision == er10:
+        bestClassifier = svm()
+    if maxPrecision == er12[2]:
+        bestClassifier = svm(C=er12[0], kernel=er12[1])
+
+    if maxPrecision == er13:
+        bestClassifier = et()
+    if maxPrecision == er15[2]:
+        bestClassifier = et(maxDepth=er15[0], n_estimators=er15[1])
+
+    dft = pd.read_csv(csvProcessedDataReadPath + 'processedGames.csv')
+    bestClassifier.X_train = dft[attributes]
+    bestClassifier.y_train = dft[classificationField]
+    bestClassifier.train()
+
+    dfr = pd.read_csv(csvExamplesToClassifyPath + 'input.csv')
+    bestClassifier.X_test = dfr[attributes]
+    bestClassifier.predict()
+    with open(csvExamplesToClassifyPath + 'output.csv', 'w', newline='') as \
+            writeFile:
+        writer = csv.writer(writeFile)
+        #writer.writerow(['prediction'])
+        for prediction in bestClassifier.y_pred.tolist():
+            writer.writerow(str(prediction))
+

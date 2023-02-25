@@ -3,7 +3,8 @@ dataSetPath = "dataSet\\"
 csvGamesPath = "dataSet\season_17_18\games\\games.csv"
 csvWritePath = "dataSet\\"
 csvProcessedDataReadPath = "dataSet\\"
-generalizationFactor = 1
+csvExamplesToClassifyPath = "classifier\\"
+generalizationFactor = 2
 kFoldNumSplits = 10
 weightMap = {1: 1, 2: 1}
 

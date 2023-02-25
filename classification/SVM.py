@@ -22,6 +22,7 @@ class SVMClassifier:
                 probability=True)
 
     def train(self):
+        self.y_train = np.ravel(self.y_train)
         self.Classifier.fit(self.X_train, self.y_train)
 
     def predict(self):
