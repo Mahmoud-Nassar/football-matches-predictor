@@ -18,7 +18,8 @@ class RFClassifier:
             train_test_split(X, y, test_size=testSize)
         self.Classifier = RandomForestClassifier(n_estimators=n_estimators,
                                                  criterion='entropy',
-                                                 class_weight=weightMap
+                                                 class_weight=weightMap,
+                                                 max_depth=maxDepth
                                                  )
         self.y_pred = []
 
@@ -74,9 +75,9 @@ class RFClassifier:
             precisions.append(precision)
         maxIndex = np.argmax(precisions)
         createGraph(sizes, precisions, "test size (percentage of the data set)",
-                     "precision in %",
-                     "results\\random forest\\random forest test size "
-                     "experiment.jpg", "Random Forest")
+                    "precision in %",
+                    "results\\random forest\\random forest test size "
+                    "experiment.jpg", "Random Forest")
         return [sizes[maxIndex], precisions[maxIndex]]
 
     @staticmethod
@@ -108,9 +109,9 @@ class RFClassifier:
             precisions.append(precision)
         maxIndex = np.argmax(precisions)
         createGraph(depths, precisions, "tree maximum depth",
-                     "precision in %",
-                     "results\\random forest\\random forest max depth "
-                     "experiment.jpg", "Random Forest")
+                    "precision in %",
+                    "results\\random forest\\random forest max depth "
+                    "experiment.jpg", "Random Forest")
         return [depths[maxIndex], precisions[maxIndex]]
 
     @staticmethod
@@ -136,7 +137,7 @@ class RFClassifier:
             precisions.append(precision)
         maxIndex = np.argmax(precisions)
         createGraph(nEstimatorsArray, precisions, "number of estimators",
-                     "precision in %",
-                     "results\\random forest\\random forest estimators"
-                     " number experiment.jpg", "Random Forest")
+                    "precision in %",
+                    "results\\random forest\\random forest estimators"
+                    " number experiment.jpg", "Random Forest")
         return [nEstimatorsArray[maxIndex], precisions[maxIndex]]
