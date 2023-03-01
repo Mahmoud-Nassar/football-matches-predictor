@@ -18,8 +18,7 @@ class SVMClassifier:
         self.X_train, self.X_test, self.y_train, self.y_test = \
             train_test_split(self.X, self.y, test_size=testSize)
         self.Classifier = \
-            SVC(kernel=kernel, C=C, class_weight=weightMap,
-                probability=True)
+            SVC(kernel=kernel, C=C, probability=True)
 
     def train(self):
         self.y_train = np.ravel(self.y_train)

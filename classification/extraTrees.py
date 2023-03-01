@@ -19,7 +19,7 @@ class ETClassifier:
             train_test_split(self.X, self.y, test_size=testSize)
         self.Classifier = \
             ExtraTreesClassifier(n_estimators=n_estimators, max_depth=maxDepth,
-                                 class_weight=weightMap, min_samples_leaf=7,
+                                 min_samples_leaf=7,
                                  criterion="entropy", bootstrap=True)
         self.y_pred = []
 

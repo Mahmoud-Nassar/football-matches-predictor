@@ -18,7 +18,6 @@ class RFClassifier:
             train_test_split(X, y, test_size=testSize)
         self.Classifier = RandomForestClassifier(n_estimators=n_estimators,
                                                  criterion='entropy',
-                                                 class_weight=weightMap,
                                                  max_depth=maxDepth
                                                  )
         self.y_pred = []

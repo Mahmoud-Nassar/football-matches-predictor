@@ -18,7 +18,6 @@ class DTClassifier:
             train_test_split(self.X, self.y, test_size=testSize)
         self.Classifier = \
             DecisionTreeClassifier(max_depth=maxDepth, splitter="best",
-                                   class_weight=weightMap,
                                    min_samples_leaf=minSamplesLeaf,
                                    criterion="entropy")
         self.y_pred = []
