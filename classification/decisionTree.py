@@ -175,6 +175,52 @@ class DTClassifier:
                 precisions[maxIndex]]
 
     @staticmethod
+    def experimentOnFeatureSubset(featuresSubsets, experimentType):
+        kf = KFold(n_splits=kFoldNumSplits, shuffle=True, random_state=15161098)
+        precisions = []
+        df = pd.read_csv(csvProcessedDataReadPath + 'processedGames.csv')
+        y = df[classificationField]
+        separator = ','
+        featuresSubsetsTitles = []
+        for featuresSubset in featuresSubsets:
+            currentSubset = [a for a in attributes if a not in featuresSubset]
+            X = df[currentSubset]
+            shortenedCurrentSubset = [s.replace(" difference", "") for s in featuresSubset]
+            featuresString = separator.join(shortenedCurrentSubset) if separator.join(
+                shortenedCurrentSubset) != "" else "none"
+            featuresSubsetsTitles.append(featuresString)
+            precisionSum = 0
+            for train_indexes, test_indexes in kf.split(X):
+                classifier = DTClassifier(maxDepth=4, minSamplesLeaf=7)
+                classifier.X_train = X.iloc[train_indexes]
+                classifier.y_train = y.iloc[train_indexes]
+                classifier.X_test = X.iloc[test_indexes]
+                classifier.y_test = y.iloc[test_indexes]
+                classifier.train()
+                classifier.predict()
+                precisionSum += classifier.getPrecision()
+            precision = precisionSum / kFoldNumSplits
+            precisions.append(precision)
+        # make features Titles readable
+        for i, features in enumerate(featuresSubsetsTitles):
+            second = False
+            for j, char in enumerate(features):
+                if char == " ":
+                    if not second:
+                        second = True
+                    else:
+                        featuresSubsetsTitles[i] = features[:j] + '\n' \
+                                                   + features[j + 1:]
+                        second = False
+
+        createGraph(featuresSubsetsTitles, precisions, " features excluded",
+                    "precision in %",
+                    "results\\decision tree\\decision tree " + experimentType
+                    + " experiment.jpg", "Decision Tree feature exclusion")
+        maxIndex = np.argmax(precisions)
+        return featuresSubsets[maxIndex], precisions[maxIndex]
+
+    @staticmethod
     def getBestPrecision(basic, maxDepthExperiment, testSizeExperiment):
         precisionSum = 0
         for i in range(0, generalizationFactor):

@@ -93,16 +93,14 @@ class League:
         team2 = self.getTeamByName(gameLine[2])
         # dateTime = processDateAndTime(gameLine[0])
         processedGameLine = [
-            team1.getTeamHistoryPoints(),
-            team2.getTeamHistoryPoints(),
-            team1.marketValue,
-            team2.marketValue,
+            team1.getTeamHistoryPoints() - team2.getTeamHistoryPoints(),
+            team1.marketValue - team2.marketValue,
             extract_numeric_value(gameLine[32]) / 1000,
-            self.getTeamPositionById(team1.teamId), self.getTeamPositionById(team2.teamId),
-            team1.laLigaTitles, team2.laLigaTitles,
-            team1.championsLeagueTitles, team2.championsLeagueTitles,
-            team1.europaLeagueTitles, team2.europaLeagueTitles,
-            team1.rank, team2.rank,
+            self.getTeamPositionById(team1.teamId) - self.getTeamPositionById(team2.teamId),
+            team1.laLigaTitles - team2.laLigaTitles,
+            team1.championsLeagueTitles - team2.championsLeagueTitles,
+            team1.europaLeagueTitles - team2.europaLeagueTitles,
+            team1.rank - team2.rank,
             getResult(gameLine)
         ]
         return processedGameLine

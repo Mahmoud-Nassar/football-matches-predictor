@@ -35,32 +35,88 @@ if __name__ == '__main__':
     ###################### DECISION-TREE  ###########################
     print("Decision Tree: ")
 
-    er0 = dt.decisionTreeBasicClassification()
-    print("        -basic classification precision: {:.2f}%"
-          .format(er0))
+    # er0 = dt.decisionTreeBasicClassification()
+    # print("        -basic classification precision: {:.2f}%"
+    #       .format(er0))
+    #
+    # er1 = dt.experimentOnTestSize(testSizeArray)
+    # print("        -test size experiment: best test size is {}% of the data "
+    #       ",and it`s resulted precision is: {:.2f}%"
+    #       .format(int(er1[0] * 100), er1[1]))
+    #
+    # er2 = dt.experimentOnMaxDepth([5, 10, 20, 30, 41, 52, 63])
+    # print("        -maximum depth experiment: the best max depth is {}"
+    #       ",and it`s resulted precision is: {:.2f}%"
+    #       .format(int(er2[0]), er2[1]))
+    #
+    # er22 = dt.experimentOnDepthAndMinSamplesLeaf(
+    #     [5, 10, 20, 41, 63], [7, 13, 15, 23, 41])
+    # print("        -maximum depth and min leaf samples experiment: "
+    #       "the best max depth and "
+    #       "minimum leaf samples\n          is ({},{})"
+    #       ",and it`s resulted precision is: {:.2f}%"
+    #       .format(int(er22[0]), er22[1], er22[2]))
 
-    er1 = dt.experimentOnTestSize(testSizeArray)
-    print("        -test size experiment: best test size is {}% of the data "
-          ",and it`s resulted precision is: {:.2f}%"
-          .format(int(er1[0] * 100), er1[1]))
+    er2_3 = dt.experimentOnFeatureSubset([[],
+                                          ["history points difference"],
+                                          ["market value difference"],
+                                          ["audience"],
+                                          ["table position difference"],
+                                          ["league titles difference"],
+                                          ["champions league titles difference"],
+                                          ["europa league difference"],
+                                          ["Rank difference"]
+                                          ],
+                                         "one feature exclusion")
 
-    er2 = dt.experimentOnMaxDepth([5, 10, 20, 30, 41, 52, 63])
-    print("        -maximum depth experiment: the best max depth is {}"
-          ",and it`s resulted precision is: {:.2f}%"
-          .format(int(er2[0]), er2[1]))
+    er2_4 = dt.experimentOnFeatureSubset([[],
+                                          ["market value difference",
+                                           "audience",
+                                           "Rank difference"],
 
-    er22 = dt.experimentOnDepthAndMinSamplesLeaf(
-        [5, 10, 20, 41, 63], [7, 13, 15, 23, 41])
-    print("        -maximum depth and min leaf samples experiment: "
-          "the best max depth and "
-          "minimum leaf samples\n          is ({},{})"
-          ",and it`s resulted precision is: {:.2f}%"
-          .format(int(er22[0]), er22[1], er22[2]))
+                                          ["market value difference",
+                                           "Rank difference"],
+
+                                          ["history points difference",
+                                           "table position difference"],
+
+                                          ["league titles difference",
+                                           "champions league titles difference",
+                                           "europa league difference"],
+                                          ],
+                                         "multiple features exclusion")
+
+    # er2_4 = dt.experimentOnFeatureSubset([[],
+    #                                       ["market value difference",
+    #                                        "audience",
+    #                                        "Rank difference"]
+    #                                       ],
+    #                                      "legacy features exclusion")
+    #
+    # er2_5 = dt.experimentOnFeatureSubset([[],
+    #                                       ["league titles difference",
+    #                                        "champions league titles difference",
+    #                                        "europa league difference"]
+    #                                       ],
+    #                                      "past achievements features exclusion")
+    #
+    # er2_6 = dt.experimentOnFeatureSubset([[],
+    #                                       ["history points difference",
+    #                                        "table position difference"]
+    #                                       ],
+    #                                      "history features exclusion")
+    #
+    # er2_7 = dt.experimentOnFeatureSubset([[],
+    #                                       ["market value difference",
+    #                                        "Rank difference"]
+    #                                       ],
+    #                                      "players related features exclusion")
 
     # print("    -best precision considering all experiments results: {:.2f}%"
     #       .format(dt.getBestPrecision(er0, er2, er1)))
     #################################################################
     ###################### KNN  #####################################
+
     print("KNN: ")
 
     er5 = knn.knnBasicClassification()
@@ -115,13 +171,13 @@ if __name__ == '__main__':
           ",and it`s resulted precision is: {:.2f}%"
           .format(int(er11[0] * 100), er11[1]))
 
-    er12 = svm.experimentOnCAndKernel([0.1, 0.2, 10, 20],
-                                      ["linear", "poly", "rbf", "sigmoid"])
-    print("        -C value and kernels experiment: "
-          "the best C value and "
-          "kernel \n          is ({},{})"
-          ",and it`s resulted precision is: {:.2f}%"
-          .format(int(er12[0]), er12[1], int(er12[2])))
+    # er12 = svm.experimentOnCAndKernel([0.1, 0.2, 10, 20],
+    #                                   ["linear", "poly", "rbf", "sigmoid"])
+    # print("        -C value and kernels experiment: "
+    #       "the best C value and "
+    #       "kernel \n          is ({},{})"
+    #       ",and it`s resulted precision is: {:.2f}%"
+    #       .format(int(er12[0]), er12[1], int(er12[2])))
     #################################################################
     #######################   Extra Trees   #####################################
     print("Extra Trees: ")
@@ -190,6 +246,6 @@ if __name__ == '__main__':
     with open(csvExamplesToClassifyPath + 'output.csv', 'w', newline='') as \
             writeFile:
         writer = csv.writer(writeFile)
-        # writer.writerow(['prediction'])
-        for prediction in bestClassifier.y_pred.tolist():
-            writer.writerow(str(prediction))
+    # writer.writerow(['prediction'])
+    for prediction in bestClassifier.y_pred.tolist():
+        writer.writerow(str(prediction))

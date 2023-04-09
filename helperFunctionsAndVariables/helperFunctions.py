@@ -3,6 +3,7 @@ import math
 
 
 def createGraph(xValues, yValues, xLabel, yLabel, savePath, title):
+    plt.figure(figsize=(15, 8))  # set the figure size to 10x8 inches
     plt.clf()
     plt.plot(xValues, yValues, 'r--')
     plt.scatter(xValues, yValues, c='r')

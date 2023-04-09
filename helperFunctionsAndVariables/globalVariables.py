@@ -9,13 +9,13 @@ kFoldNumSplits = 10
 weightMap = {1: 1, 2: 1}
 
 attributes = [
-    "team1 history points", "team2 history points",
-    "team1 market value", "team2 market value",
+    "history points difference",
+    "market value difference",
     "audience",
-    "team1 table position", "team2 table position",
-    "team1 league titles", "team2 league titles",
-    "team1 champions league titles", "team2 champions league titles",
-    "team1 europa league titles", "team2 europa league titles",
-    "team1 Rank", "team2 Rank"
+    "table position difference",
+    "league titles difference",
+    "champions league titles difference",
+    "europa league titles difference",
+    "Rank difference"
 ]
 classificationField = ["result"]
