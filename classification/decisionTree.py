@@ -10,9 +10,11 @@ from helperFunctionsAndVariables.helperFunctions import \
 
 
 class DTClassifier:
-    def __init__(self, maxDepth=None, minSamplesLeaf=7, testSize=None):
+    def __init__(self, maxDepth=None, minSamplesLeaf=7, testSize=None, featureExcluded=None):
+        if featureExcluded is None:
+            featureExcluded = {}
         df = pd.read_csv(csvProcessedDataReadPath + 'processedGames.csv')
-        self.X = df[attributes]
+        self.X = df[[a for a in attributes if a not in featureExcluded]]
         self.y = df[classificationField]
         self.X_train, self.X_test, self.y_train, self.y_test = \
             train_test_split(self.X, self.y, test_size=testSize)

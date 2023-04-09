@@ -1,3 +1,3 @@
-team1 history points,team2 history points,team1 market value,team2 market value,audience,team1 table position,team2 table position,team1 league titles,team2 league titles,team1 champions league titles,team2 champions league titles,team1 europa league titles,team2 europa league titles,team1 Rank,team2 Rank
-4,4,5.52,6.005,24.838,10,10,0,0,0,0,0,0,77,76
-1,6,6.56,22,10.874,15,11,0,0,0,0,0,1,72,80
+history points difference,market value difference,audience,table position difference,league titles difference,champions league titles difference,europa league titles difference,Rank difference,result
+-2,-3.5,43,-3,1,1,0,-2,1
+4,80,60,-13,24,5,0,8,1
