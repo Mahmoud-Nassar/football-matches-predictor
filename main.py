@@ -215,12 +215,12 @@ if __name__ == '__main__':
         bestClassifier = dt(maxDepth=er2[0])
     if maxPrecision == er22[2]:
         bestClassifier = dt(maxDepth=er22[0], minSamplesLeaf=er22[1])
-    #if maxPrecision == er2_3[1]:
-    attributeExcluded = er2_3[0]
-    bestClassifier = dt(maxDepth=4, minSamplesLeaf=7, featureExcluded=attributeExcluded)
-    #if maxPrecision == er2_4[1]:
-    attributeExcluded = er2_4[0]
-    bestClassifier = dt(maxDepth=4, minSamplesLeaf=7, featureExcluded=attributeExcluded)
+    if maxPrecision == er2_3[1]:
+        attributeExcluded = er2_3[0]
+        bestClassifier = dt(maxDepth=4, minSamplesLeaf=7, featureExcluded=attributeExcluded)
+    if maxPrecision == er2_4[1]:
+        attributeExcluded = er2_4[0]
+        bestClassifier = dt(maxDepth=4, minSamplesLeaf=7, featureExcluded=attributeExcluded)
 
     # if maxPrecision == er5:
     #     bestClassifier = knn()
@@ -255,6 +255,6 @@ if __name__ == '__main__':
     with open(csvExamplesToClassifyPath + 'output.csv', 'w', newline='') as \
             writeFile:
         writer = csv.writer(writeFile)
-    # writer.writerow(['prediction'])
-    for prediction in bestClassifier.y_pred.tolist():
-        writer.writerow(str(prediction))
+        # writer.writerow(['prediction'])
+        for prediction in bestClassifier.y_pred.tolist():
+            writer.writerow(str(prediction[0]))
